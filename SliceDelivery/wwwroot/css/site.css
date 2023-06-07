@@ -749,6 +749,10 @@ a:hover{
     }
 /* ------------------------------------------FOOTER SECTION */
 
+.fa-shopping-cart, .fa-user {
+    font-size: 23px !important;
+}
+
 /* ------------------------------------------RESPONSIVE SECTION */
 @media (max-width: 991px) {
     html {
