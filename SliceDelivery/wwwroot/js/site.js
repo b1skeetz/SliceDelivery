@@ -16,6 +16,14 @@ searchBtn.addEventListener('click', () => {
     })
 })
 
+
+
+
+
+
+
+
+
 cartBtn.addEventListener('click', () => {
     cartItem.classList.toggle('active');
     document.addEventListener('click', (e) => {
