@@ -22,7 +22,6 @@ C:\Users\Crowley\source\repos\b1skeetz\SliceDelivery\SliceDelivery\obj\Debug\net
 C:\Users\Crowley\source\repos\b1skeetz\SliceDelivery\SliceDelivery\obj\Debug\net5.0\SliceDelivery.TagHelpers.output.cache
 C:\Users\Crowley\source\repos\b1skeetz\SliceDelivery\SliceDelivery\obj\Debug\net5.0\SliceDelivery.RazorCoreGenerate.cache
 C:\Users\Crowley\source\repos\b1skeetz\SliceDelivery\SliceDelivery\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
-C:\Users\Crowley\source\repos\b1skeetz\SliceDelivery\SliceDelivery\obj\Debug\net5.0\Razor\Views\Home\Privacy.cshtml.g.cs
 C:\Users\Crowley\source\repos\b1skeetz\SliceDelivery\SliceDelivery\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Users\Crowley\source\repos\b1skeetz\SliceDelivery\SliceDelivery\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\Crowley\source\repos\b1skeetz\SliceDelivery\SliceDelivery\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs

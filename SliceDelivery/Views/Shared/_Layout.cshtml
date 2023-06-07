@@ -1,5 +1,12 @@
 ﻿@{
-    bool status = false;
+    int status = 0;
+    string attributeValue0 = status == 0 ? "active" : "";
+    string attributeValue1 = status == 1 ? "active" : "";
+    string attributeValue2 = status == 2 ? "active" : "";
+    string attributeValue3 = status == 3 ? "active" : "";
+    string attributeValue4 = status == 4 ? "active" : "";
+    string attributeValue5 = status == 5 ? "active" : "";
+    string attributeValue6 = status == 6 ? "active" : "";
 }
 
 <!DOCTYPE html>
@@ -19,29 +26,28 @@
             <img src="~/images/pngegg.png" alt="logo">
         </a>
 
-        <nav class="navbar">
-            <a id="greeting"
-               @if(status == true){
-                   
-               }
-                class="active" asp-area="" asp-controller="Home" asp-action="Index">home</a>
-            <a id="about" asp-area="" asp-controller="Home" asp-action="About">About Us</a>
-            <a id="menu" asp-area="" asp-controller="Home" asp-action="Menu">menu</a>
-            <a id="Products" asp-area="" asp-controller="Home" asp-action="Products">products</a>
-            <a id="Review" asp-area="" asp-controller="Home" asp-action="Review">review</a>
-            <a id="contact" asp-area="" asp-controller="Home" asp-action="Contact">contact</a>
-            <a id="blog" asp-area="" asp-controller="Home" asp-action="Blog">blog</a>
-        </nav>
+          <nav class="navbar">
+                    <a id="greeting" class="@attributeValue0" asp-area="" asp-controller="Home" asp-action="Index">home</a>
+                    <a id="about" class="@attributeValue1" asp-area="" asp-controller="Home" asp-action="About">About Us</a>
+                    <a id="menu" class="@attributeValue2" asp-area="" asp-controller="Home" asp-action="Menu">menu</a>
+                    <a id="Products" class="@attributeValue3" asp-area="" asp-controller="Home" asp-action="Products">products</a>
+                    <a id="Review" class="@attributeValue4" asp-area="" asp-controller="Home" asp-action="Review">review</a>
+                    <a id="contact" class="@attributeValue5" asp-area="" asp-controller="Home" asp-action="Contact">contact</a>
+                    <a id="blog" class="@attributeValue6" asp-area="" asp-controller="Home" asp-action="Blog">blog</a>
+
+
+
+
 
         <div class="buttons">
             <button id="search-btn">
                 <i class="fas fa-search"></i>
             </button>
             <button id="cart-btn">
-                <i class="fas fa-shopping-cart"></i>
+                 <a class="fas fa-shopping-cart" id="cart" asp-area="" asp-controller="Home" asp-action="Cart"></a>
             </button>
             <button id="user-btn">
-                <i class="fas fa-user"></i>
+                 <a class="fas fa-user" id="user"asp-area="" asp-controller="Home" asp-action="User"></a>
             </button>
             <button id="menu-btn" >
                 <i class="fas fa-bars"></i>
@@ -94,9 +100,9 @@
             <a href="#" class="btn" id="check_out">check out </a>
         </div>
     </header>
-   
-            @RenderBody()
-     
+
+    @RenderBody()
+
 <section class="footer">
         <div class="search">
             <input type="text" class="search-input" placeholder="Search">
@@ -122,6 +128,6 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+        @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
