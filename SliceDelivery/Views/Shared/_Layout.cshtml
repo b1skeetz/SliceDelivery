@@ -1,6 +1,5 @@
-﻿<!DOCTYPE html>
-﻿@{
-    int status = 0;
+@{
+    int status = @ViewBag.Number;
     string attributeValue0 = status == 0 ? "active" : "";
     string attributeValue1 = status == 1 ? "active" : "";
     string attributeValue2 = status == 2 ? "active" : "";
@@ -9,6 +8,8 @@
     string attributeValue5 = status == 5 ? "active" : "";
     string attributeValue6 = status == 6 ? "active" : "";
 }
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -24,16 +25,16 @@
         <a href="#" class="logo">
             <img src="~/images/pngegg.png" alt="logo">
         </a>
-        <nav class="navbar">
-            <p>@ViewBag.Number</p>
-            <a id="greeting" class="active" asp-area="" asp-controller="Home" asp-action="Index">home</a>
-            <a id="about" asp-area="" asp-controller="Home" asp-action="About">About Us</a>
-            <a id="menu" asp-area="" asp-controller="Home" asp-action="Menu">menu</a>
-            <a id="Products" asp-area="" asp-controller="Home" asp-action="Products">products</a>
-            <a id="Review" asp-area="" asp-controller="Home" asp-action="Review">review</a>
-            <a id="contact" asp-area="" asp-controller="Home" asp-action="Contact">contact</a>
-            <a id="blog" asp-area="" asp-controller="Home" asp-action="Blog">blog</a>
-        </nav>
+        <h1>@ViewBag.Number</h1>
+          <nav class="navbar">
+                    <a id="greeting" class="@attributeValue0" asp-area="" asp-controller="Home" asp-action="Index">home</a>
+                    <a id="about" class="@attributeValue1" asp-area="" asp-controller="Home" asp-action="About">About Us</a>
+                    <a id="menu" class="@attributeValue2" asp-area="" asp-controller="Home" asp-action="Menu">menu</a>
+                    <a id="Products" class="@attributeValue3" asp-area="" asp-controller="Home" asp-action="Products">products</a>
+                    <a id="Review" class="@attributeValue4" asp-area="" asp-controller="Home" asp-action="Review">review</a>
+                    <a id="contact" class="@attributeValue5" asp-area="" asp-controller="Home" asp-action="Contact">contact</a>
+                    <a id="blog" class="@attributeValue6" asp-area="" asp-controller="Home" asp-action="Blog">blog</a>
+       </nav>
         <div class="buttons">
             <button id="search-btn">
                 <i class="fas fa-search"></i>
@@ -95,10 +96,9 @@
             <a href="#" class="btn" id="check_out">check out </a>
         </div>
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
+
             @RenderBody()
-        </main>
+        
     </div>
     <section class="footer">
         <div class="search">
