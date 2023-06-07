@@ -20,30 +20,37 @@ namespace SliceDelivery.Controllers
 
         public IActionResult Index()
         {
+            ViewBag.Number = 0;
             return View();
         }
         public IActionResult About()
         {
+            ViewBag.Number = 1;
             return View();
         }
         public IActionResult Menu()
         {
+            ViewBag.Number = 2;
             return View();
         }
         public IActionResult Products()
         {
+            ViewBag.Number = 3;
             return View();
         }
         public IActionResult Review()
         {
+            ViewBag.Number = 4;
             return View();
         }
         public IActionResult Contact()
         {
+            ViewBag.Number = 5;
             return View();
         }
         public IActionResult Blog()
         {
+            ViewBag.Number = 6;
             return View();
         }
 

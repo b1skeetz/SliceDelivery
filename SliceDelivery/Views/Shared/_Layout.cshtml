@@ -1,8 +1,4 @@
-﻿@{
-    bool status = false;
-}
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -20,11 +16,8 @@
         </a>
 
         <nav class="navbar">
-            <a id="greeting"
-               @if(status == true){
-                   
-               }
-                class="active" asp-area="" asp-controller="Home" asp-action="Index">home</a>
+            <p>@ViewBag.Number</p>
+            <a id="greeting" class="active" asp-area="" asp-controller="Home" asp-action="Index">home</a>
             <a id="about" asp-area="" asp-controller="Home" asp-action="About">About Us</a>
             <a id="menu" asp-area="" asp-controller="Home" asp-action="Menu">menu</a>
             <a id="Products" asp-area="" asp-controller="Home" asp-action="Products">products</a>
