@@ -6,6 +6,9 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using SliceDelivery.DAL;
+using SliceDelivery.Domain.Models;
+using SliceDelivery.DAL.Interfaces;
 
 namespace SliceDelivery.Controllers
 {
@@ -18,9 +21,14 @@ namespace SliceDelivery.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> IndexAsync()
         {
+             
             ViewBag.Number = 0;
+            return View();
+        }
+        public new IActionResult User()
+        {
             return View();
         }
         public IActionResult About()

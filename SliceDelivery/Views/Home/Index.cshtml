@@ -1,4 +1,5 @@
-﻿@{
+﻿@model SliceDelivery.Domain.Models.Product
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -16,9 +17,9 @@
 
                 <div class="box-head">
                     <img src="~/images/pngwing.com.png" alt="">
-                    <span id="Pizza" class="menu-category">Pizza</span>
-                    <h3 id=" Mini_Pizzas">6 Mini Pizzas</h3>
-                    <div class="price">$104.99 <span>$119.99</span></div>
+                    <span id="Pizza" class="menu-category">@Model.Category.ToString()</span>
+                    <h3 id=" Mini_Pizzas">@Model.Name</h3>
+                    <div class="price">$@Model.CurrentPrice <span>$@Model.OldPrice</span></div>
                 </div>
                 <div class="box-bottom">
                     <a href="#" class="btn">add to cart</a>

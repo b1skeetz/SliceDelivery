@@ -1,5 +1,5 @@
 @{
-    int status = @ViewBag.Number;
+    int? status = @ViewBag.Number;
     string attributeValue0 = status == 0 ? "active" : "";
     string attributeValue1 = status == 1 ? "active" : "";
     string attributeValue2 = status == 2 ? "active" : "";
@@ -98,7 +98,6 @@
 
             @RenderBody()
         
-    </div>
     <section class="footer">
         <div class="search">
             <input type="text" class="search-input" placeholder="Search">

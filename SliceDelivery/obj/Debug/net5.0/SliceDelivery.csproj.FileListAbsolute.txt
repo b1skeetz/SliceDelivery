@@ -92,3 +92,17 @@ C:\Users\damir\source\repos\SliceDelivery\SliceDelivery\obj\Debug\net5.0\SliceDe
 C:\Users\damir\source\repos\SliceDelivery\SliceDelivery\obj\Debug\net5.0\SliceDelivery.genruntimeconfig.cache
 C:\Users\damir\source\repos\SliceDelivery\SliceDelivery\obj\Debug\net5.0\ref\SliceDelivery.dll
 C:\Users\damir\source\repos\SliceDelivery\SliceDelivery\obj\Debug\net5.0\SliceDelivery.csproj.CopyComplete
+C:\Users\damir\source\repos\SliceDelivery\SliceDelivery\bin\Debug\net5.0\libman.json
+C:\Users\damir\source\repos\SliceDelivery\SliceDelivery\bin\Debug\net5.0\SliceDelivery.Domain.dll
+C:\Users\damir\source\repos\SliceDelivery\SliceDelivery\bin\Debug\net5.0\SliceDelivery.Domain.pdb
+C:\Users\damir\source\repos\SliceDelivery\SliceDelivery\bin\Debug\net5.0\Humanizer.dll
+C:\Users\damir\source\repos\SliceDelivery\SliceDelivery\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\damir\source\repos\SliceDelivery\SliceDelivery\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\damir\source\repos\SliceDelivery\SliceDelivery\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\damir\source\repos\SliceDelivery\SliceDelivery\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\damir\source\repos\SliceDelivery\SliceDelivery\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\damir\source\repos\SliceDelivery\SliceDelivery\bin\Debug\net5.0\Npgsql.dll
+C:\Users\damir\source\repos\SliceDelivery\SliceDelivery\bin\Debug\net5.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+C:\Users\damir\source\repos\SliceDelivery\SliceDelivery\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
+C:\Users\damir\source\repos\SliceDelivery\SliceDelivery\bin\Debug\net5.0\SliceDelivery.DAL.dll
+C:\Users\damir\source\repos\SliceDelivery\SliceDelivery\bin\Debug\net5.0\SliceDelivery.DAL.pdb
