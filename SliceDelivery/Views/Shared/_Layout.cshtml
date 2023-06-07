@@ -1,6 +1,4 @@
-<<<<<<< HEAD
 ﻿<!DOCTYPE html>
-=======
 ﻿@{
     int status = 0;
     string attributeValue0 = status == 0 ? "active" : "";
@@ -11,9 +9,6 @@
     string attributeValue5 = status == 5 ? "active" : "";
     string attributeValue6 = status == 6 ? "active" : "";
 }
-
-<!DOCTYPE html>
->>>>>>> e40711adf815d4699fdd8b3c5cc9a0e4a6bce01c
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -24,13 +19,11 @@
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
-<header class="header" >
+    <header class="header">
 
         <a href="#" class="logo">
             <img src="~/images/pngegg.png" alt="logo">
         </a>
-
-<<<<<<< HEAD
         <nav class="navbar">
             <p>@ViewBag.Number</p>
             <a id="greeting" class="active" asp-area="" asp-controller="Home" asp-action="Index">home</a>
@@ -41,46 +34,40 @@
             <a id="contact" asp-area="" asp-controller="Home" asp-action="Contact">contact</a>
             <a id="blog" asp-area="" asp-controller="Home" asp-action="Blog">blog</a>
         </nav>
-=======
-          <nav class="navbar">
-                    <a id="greeting" class="@attributeValue0" asp-area="" asp-controller="Home" asp-action="Index">home</a>
-                    <a id="about" class="@attributeValue1" asp-area="" asp-controller="Home" asp-action="About">About Us</a>
-                    <a id="menu" class="@attributeValue2" asp-area="" asp-controller="Home" asp-action="Menu">menu</a>
-                    <a id="Products" class="@attributeValue3" asp-area="" asp-controller="Home" asp-action="Products">products</a>
-                    <a id="Review" class="@attributeValue4" asp-area="" asp-controller="Home" asp-action="Review">review</a>
-                    <a id="contact" class="@attributeValue5" asp-area="" asp-controller="Home" asp-action="Contact">contact</a>
-                    <a id="blog" class="@attributeValue6" asp-area="" asp-controller="Home" asp-action="Blog">blog</a>
-
-
-
-
->>>>>>> e40711adf815d4699fdd8b3c5cc9a0e4a6bce01c
-
+        <nav class="navbar">
+            <a id="greeting" class="@attributeValue0" asp-area="" asp-controller="Home" asp-action="Index">home</a>
+            <a id="about" class="@attributeValue1" asp-area="" asp-controller="Home" asp-action="About">About Us</a>
+            <a id="menu" class="@attributeValue2" asp-area="" asp-controller="Home" asp-action="Menu">menu</a>
+            <a id="Products" class="@attributeValue3" asp-area="" asp-controller="Home" asp-action="Products">products</a>
+            <a id="Review" class="@attributeValue4" asp-area="" asp-controller="Home" asp-action="Review">review</a>
+            <a id="contact" class="@attributeValue5" asp-area="" asp-controller="Home" asp-action="Contact">contact</a>
+            <a id="blog" class="@attributeValue6" asp-area="" asp-controller="Home" asp-action="Blog">blog</a>
+        </nav>
         <div class="buttons">
             <button id="search-btn">
                 <i class="fas fa-search"></i>
             </button>
             <button id="cart-btn">
-                 <a class="fas fa-shopping-cart" id="cart" asp-area="" asp-controller="Home" asp-action="Cart"></a>
+                <a class="fas fa-shopping-cart" id="cart" asp-area="" asp-controller="Home" asp-action="Cart"></a>
             </button>
             <button id="user-btn">
-                 <a class="fas fa-user" id="user"asp-area="" asp-controller="Home" asp-action="User"></a>
+                <a class="fas fa-user" id="user" asp-area="" asp-controller="Home" asp-action="User"></a>
             </button>
-            <button id="menu-btn" >
+            <button id="menu-btn">
                 <i class="fas fa-bars"></i>
 
             </button>
             <button id="en-btn">EN</button>
             <button id="ru-btn">RU</button>
             <button id="kz-btn">KZ</button>
-        </div>    
+        </div>
 
 
-      <div class="search-form">
-        <h1 id="Search" type="text" class="search-input" id="search-box" > Search</h1>
-  <input >
-  <i class="fas fa-search"></i>
-</div>
+        <div class="search-form">
+            <h1 id="Search" type="text" class="search-input" id="search-box"> Search</h1>
+            <input>
+            <i class="fas fa-search"></i>
+        </div>
         <div class="cart-items-container">
             <div class="cart-item">
                 <i class="fas fa-times"></i>
@@ -117,10 +104,12 @@
             <a href="#" class="btn" id="check_out">check out </a>
         </div>
     </header>
-
-    @RenderBody()
-
-<section class="footer">
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    <section class="footer">
         <div class="search">
             <input type="text" class="search-input" placeholder="Search">
             <button class="btn btn-primary">search</button>
@@ -139,12 +128,12 @@
             <a href="#contact">contact</a>
             <a href="#blog">blog</a>
         </div>
+    </section>
 
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-        @await RenderSectionAsync("Scripts", required: false)
+    @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
