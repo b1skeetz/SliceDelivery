@@ -20,19 +20,6 @@ searchBtn.addEventListener('click', () => {
 
 
 
-
-
-
-
-cartBtn.addEventListener('click', () => {
-    cartItem.classList.toggle('active');
-    document.addEventListener('click', (e) => {
-        if (!e.composedPath().includes(cartBtn) && !e.composedPath().includes(cartItem)) {
-            cartItem.classList.remove('active');
-        }
-    })
-})
-
 menuBtn.addEventListener('click', () => {
     navbar.classList.toggle('active');
     document.addEventListener('click', (e) => {
