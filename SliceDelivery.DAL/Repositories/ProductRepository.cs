@@ -17,29 +17,40 @@ namespace SliceDelivery.DAL.Repositories
             _db = db;
         }
 
-        public bool Create(Product entity)
+        public async Task<bool> Create(Product entity)
         {
-            throw new NotImplementedException();
+            await _db.Products.AddAsync(entity);
+            await _db.SaveChangesAsync();
+            return true;
         }
 
-        public bool Delete(Product entity)
+        public async Task<bool> Delete(Product entity)
         {
-            throw new NotImplementedException();
+            _db.Products.Remove(entity);
+            await _db.SaveChangesAsync();
+            return true;
         }
 
-        public Product Get(int id)
+        public async Task<Product> Get(int id)
         {
-            throw new NotImplementedException();
+            return await _db.Products.FirstOrDefaultAsync(x => x.Id == id);
         }
 
-        public Product GetByName(string name)
+        public async Task<Product> GetByName(string name)
         {
-            throw new NotImplementedException();
+            return await _db.Products.FirstOrDefaultAsync(x => x.Name == name);
         }
 
-        public Task<List<Product>> Select()
+        public async Task<List<Product>> Select()
         {
-            return _db.Products.ToListAsync();
+            return await _db.Products.ToListAsync();
+        }
+
+        public async Task<Product> Update(Product entity)
+        {
+            _db.Products.Update(entity);
+            await _db.SaveChangesAsync();
+            return entity;
         }
     }
 }

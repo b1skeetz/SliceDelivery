@@ -10,12 +10,14 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="5.0.10" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\SliceDelivery.DAL\SliceDelivery.DAL.csproj" />
     <ProjectReference Include="..\SliceDelivery.Domain\SliceDelivery.Domain.csproj" />
+    <ProjectReference Include="..\SliceDelivery.Service\SliceDelivery.Service.csproj" />
   </ItemGroup>
 
 </Project>

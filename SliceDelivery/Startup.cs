@@ -8,6 +8,8 @@ using SliceDelivery.DAL;
 using SliceDelivery.DAL.Interfaces;
 using SliceDelivery.DAL.Repositories;
 using SliceDelivery.Domain.Models;
+using SliceDelivery.Service.Implementations;
+using SliceDelivery.Service.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,8 +30,9 @@ namespace SliceDelivery
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddDbContext<DiplomaContext>();
+            services.AddDbContext<DiplomaContext>();         
             services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped<IProductService, ProductService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
