@@ -20,7 +20,7 @@ namespace SliceDelivery.Controllers
         {
             _logger = logger;
         }
-
+         
         public async Task<IActionResult> IndexAsync()
         {
              
