@@ -276,3 +276,4 @@ C:\Users\Crowley\Source\Repos\b1skeetz\SliceDelivery\SliceDelivery\bin\Debug\net
 C:\Users\Crowley\Source\Repos\b1skeetz\SliceDelivery\SliceDelivery\obj\Debug\net5.0\Razor\Views\Product\GetProducts.cshtml.g.cs
 C:\Users\Crowley\Source\Repos\b1skeetz\SliceDelivery\SliceDelivery\obj\Debug\net5.0\Razor\Views\Home\Login.cshtml.g.cs
 C:\Users\Crowley\Source\Repos\b1skeetz\SliceDelivery\SliceDelivery\obj\Debug\net5.0\Razor\Views\Home\Register.cshtml.g.cs
+C:\Users\Crowley\Source\Repos\b1skeetz\SliceDelivery\SliceDelivery\obj\Debug\net5.0\Razor\Views\Home\Cart.cshtml.g.cs

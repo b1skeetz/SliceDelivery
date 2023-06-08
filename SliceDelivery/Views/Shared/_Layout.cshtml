@@ -22,7 +22,7 @@
 <body>
     <header class="header">
 
-        <a href="#" class="logo">
+        <a asp-area="" asp-controller="Home" asp-action="Index" class="logo">
             <img src="~/images/logo.png" alt="logo">
         </a>
           <nav class="navbar">
@@ -48,11 +48,11 @@
                 </button>
             }
 
-             <!--  <button id="cart-btn">
+               <button id="cart-btn">
                 <a class="fas fa-shopping-cart" id="cart" asp-area="" asp-controller="Home" asp-action="Cart"></a>
             </button>
 
-            -->
+            
 
 
             @if (User.Identity.IsAuthenticated)
