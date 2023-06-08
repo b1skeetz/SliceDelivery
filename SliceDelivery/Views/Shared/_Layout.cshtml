@@ -34,16 +34,41 @@
                     <a id="contact" class="@attributeValue5" asp-area="" asp-controller="Home" asp-action="Contact">contact</a>
                     <a id="blog" class="@attributeValue6" asp-area="" asp-controller="Home" asp-action="Blog">blog</a>
        </nav>
-        <div class="buttons">
+        <div class="buttons headerBtns">
             <button id="search-btn">
                 <i class="fas fa-search"></i>
             </button>
-            <button id="cart-btn">
+         
+            @if(!User.Identity.IsAuthenticated){
+                <button id="login-btn">
+                    <a class="fas btns" id="login" asp-area="" asp-controller="Home" asp-action="Login">Вход</a>
+                </button>
+                 <button id="register-btn">
+                    <a class="fas btns" id="register" asp-area="" asp-controller="Home" asp-action="Register">Регистрация</a>
+                </button>
+            }
+
+             <!--  <button id="cart-btn">
                 <a class="fas fa-shopping-cart" id="cart" asp-area="" asp-controller="Home" asp-action="Cart"></a>
             </button>
-            <button id="user-btn">
-                <a class="fas fa-user" id="user" asp-area="" asp-controller="Home" asp-action="User"></a>
-            </button>
+
+            -->
+
+
+            @if (User.Identity.IsAuthenticated)
+            {
+                       <button id="cart-btn">
+                    <a class="fas fa-shopping-cart" id="cart" asp-area="" asp-controller="Home" asp-action="Cart"></a>
+                </button>
+                <button id="user-btn">
+                    <a class="fas fa-user" id="user" asp-area="" asp-controller="Home" asp-action="User"></a>
+                </button>
+                <button id="out-btn">
+                    <a class="fas btns" id="out" asp-area="" asp-controller="Home" asp-action="Out">Выход</a>
+                </button>
+            }
+            
+
             <button id="menu-btn">
                 <i class="fas fa-bars"></i>
 
@@ -95,20 +120,20 @@
             <a href="#" class="btn" id="check_out">check out </a>
         </div>
     </header>
-
-            @RenderBody()
+    <div class="bbooddyy">
+        @RenderBody()
+    </div>
+            
         
     <section class="footer">
-        <div class="search">
+      <!--  <div class="search">
             <input type="text" class="search-input" placeholder="Search">
             <button class="btn btn-primary">search</button>
         </div>
-        <div class="share">
-            <a href="#" class="fab fa-facebook"></a>
-            <a href="#" class="fab fa-instagram"></a>
 
-        </div>
-        <div class="links">
+        -->
+
+          <div class="links">
             <a href="#home">home</a>
             <a href="#about">about</a>
             <a href="#menu">menu</a>
@@ -117,8 +142,15 @@
             <a href="#contact">contact</a>
             <a href="#blog">blog</a>
         </div>
-    </section>
 
+
+        <div class="share">
+            <a href="#" class="fab fa-facebook"></a>
+            <a href="#" class="fab fa-instagram"></a>
+
+        </div>
+      
+    </section>
     <script src="script.js"></script>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

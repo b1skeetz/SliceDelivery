@@ -10,3 +10,15 @@ C:\Users\damir\source\repos\SliceDelivery\SliceDelivery.Domain\obj\Debug\net5.0\
 C:\Users\damir\source\repos\SliceDelivery\SliceDelivery.Domain\obj\Debug\net5.0\refint\SliceDelivery.Domain.dll
 C:\Users\damir\source\repos\SliceDelivery\SliceDelivery.Domain\obj\Debug\net5.0\SliceDelivery.Domain.pdb
 C:\Users\damir\source\repos\SliceDelivery\SliceDelivery.Domain\obj\Debug\net5.0\ref\SliceDelivery.Domain.dll
+C:\Users\Crowley\Source\Repos\b1skeetz\SliceDelivery\SliceDelivery.Domain\bin\Debug\net5.0\SliceDelivery.Domain.deps.json
+C:\Users\Crowley\Source\Repos\b1skeetz\SliceDelivery\SliceDelivery.Domain\bin\Debug\net5.0\SliceDelivery.Domain.dll
+C:\Users\Crowley\Source\Repos\b1skeetz\SliceDelivery\SliceDelivery.Domain\bin\Debug\net5.0\SliceDelivery.Domain.pdb
+C:\Users\Crowley\Source\Repos\b1skeetz\SliceDelivery\SliceDelivery.Domain\obj\Debug\net5.0\SliceDelivery.Domain.csproj.AssemblyReference.cache
+C:\Users\Crowley\Source\Repos\b1skeetz\SliceDelivery\SliceDelivery.Domain\obj\Debug\net5.0\SliceDelivery.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Crowley\Source\Repos\b1skeetz\SliceDelivery\SliceDelivery.Domain\obj\Debug\net5.0\SliceDelivery.Domain.AssemblyInfoInputs.cache
+C:\Users\Crowley\Source\Repos\b1skeetz\SliceDelivery\SliceDelivery.Domain\obj\Debug\net5.0\SliceDelivery.Domain.AssemblyInfo.cs
+C:\Users\Crowley\Source\Repos\b1skeetz\SliceDelivery\SliceDelivery.Domain\obj\Debug\net5.0\SliceDelivery.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Crowley\Source\Repos\b1skeetz\SliceDelivery\SliceDelivery.Domain\obj\Debug\net5.0\SliceDelivery.Domain.dll
+C:\Users\Crowley\Source\Repos\b1skeetz\SliceDelivery\SliceDelivery.Domain\obj\Debug\net5.0\refint\SliceDelivery.Domain.dll
+C:\Users\Crowley\Source\Repos\b1skeetz\SliceDelivery\SliceDelivery.Domain\obj\Debug\net5.0\SliceDelivery.Domain.pdb
+C:\Users\Crowley\Source\Repos\b1skeetz\SliceDelivery\SliceDelivery.Domain\obj\Debug\net5.0\ref\SliceDelivery.Domain.dll

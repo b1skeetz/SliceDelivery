@@ -206,10 +206,4 @@ document.getElementById('kz-btn').addEventListener('click', function () {
 // Вызываем функцию для установки текста на странице
 updateText();
 
-document.getElementById('user-btn').addEventListener('click', function () {
-    window.location.href = './registration.html';
-});
 
-document.getElementById("entrance-btn").addEventListener("click", function () {
-    window.location.href = "other-page.html"; // Замените "other-page.html" на путь к желаемой странице
-});
