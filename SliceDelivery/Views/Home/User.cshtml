@@ -1,5 +1,10 @@
 ﻿@{
     ViewData["Title"] = "Privacy Policy";
+    string family = "55";
+    string name = "55";
+    string address = "55";
+    string phone = "55";
+    bool edit = false;
 }
 
 
@@ -62,6 +67,42 @@
         .order-btn:hover {
             background-color: #45a049;
         }
+          h2 {
+    text-align: center;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 18px;
+  }
+
+  input[type="text"],input[type="phone"],
+  input[type="password"] {
+    width: 50%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+
+  button {
+    display: block;
+    width: 50%;
+    padding: 10px;
+    background-color:#252525;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color:  #F0B559;
+  }
   </style>
 </head>
 <body>
@@ -72,14 +113,74 @@
       </div>
       <div class="profile-info">
         <div class="profile-name">Имя пользователя</div>
-        <div class="profile-email">user@example.com</div>
+        <!--<div class="profile-email">user@example.com</div>-->
       </div>
     </div>
 
     <div class="profile-section">
       <div class="profile-section-title">Персональная информация</div>
       <div class="profile-section-content">
-        <p>Здесь может быть ваша персональная информация, такая как имя, фамилия, дата рождения, адрес и т.д.</p>
+         <form method="post" asp-controller="HomeController" asp-action="UpdateProfile">
+        <div class="form-group">
+          <label for="username">Фамилия</label>
+          @if(family != ""){
+                  <span>Ваша фамилия</span>
+          }
+          
+          @if(edit){
+                    <input type="text" id="firstName" name="firstName" placeholder="Введите вашу фамилию">
+          }
+        
+
+        </div>
+        <div class="form-group">
+          <label for="name">Имя</label>
+                        @if (name != "")
+                        {
+                        <span>Ваше имя</span>
+                        }
+
+                        @if (edit)
+                        {
+                             <input type="text" id="name" name="name" placeholder="Введите ваше имя">
+                        }
+         
+        </div>
+
+         <div class="form-group">
+          <label for="address">Адрес</label>
+                        @if (address != "")
+                        {
+                            <span>Ваш адрес</span>
+                        }
+
+                        @if (edit)
+                        {
+                                     <input type="text" id="address" name="address" placeholder="Введите ваш адрес">
+                        }
+          
+        </div>
+
+         <div class="form-group">
+          <label for="phone">Телефон</label>
+                        @if (phone != "")
+                        {
+                                <span>Ваш номер телефона</span>
+                        }
+
+                        @if (edit)
+                        {
+                                              <input type="phone" id="phone" name="phone" placeholder="Введите ваш телефон">
+                        }
+         
+        </div>
+        <button id="entrance-btn editBtn" type="button" onclick="changeViewBag()">Изменить данные</button>
+                    @if (edit)
+                    {
+                                                       <button id="entrance-btn" type="submit" style="margin-top: 15px">Сохранить изменения</button>
+                    }
+       
+      </form>
       </div>
     </div>
 
@@ -112,4 +213,11 @@
     </table>
     </div>
   </div>
+  <script>
+    function changeViewBag() {
+        @{
+            edit = true;
+        }
+    }
+</script>
 </body>
