@@ -171,6 +171,7 @@ a {
     padding-left: 1rem;
     height: 100%;
     margin-bottom: 0;
+    color: #eee;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -223,7 +224,7 @@ a {
         position: absolute;
         top: 115%;
         right: 7%;
-        background-color: #eeeeee;
+        background-color: #2D2D2D;
         width: 50rem;
         height: 5rem;
         display: flex;
@@ -246,7 +247,11 @@ a {
 
         .header .search-form input {
             width: 100%;
-            padding-left: 10px;
+            padding-left: 20px;
+            background: transparent;
+            margin: 0 15px;
+            font-size: 15px;
+            color: #eee;
             padding-right: 10px;
         }
 
@@ -267,8 +272,9 @@ a {
             border-color: var(--main-color);
             padding-bottom: .5rem;
         }
-.bbooddyy{
-    padding-top: 130px;
+.bbooddyy {
+    padding-top: 73px;
+    min-height: 60vh;
 }
 .headerBtns {
     display: flex;
@@ -369,7 +375,7 @@ button {
 
 
 .home {
-    min-height: 100vh;
+    min-height: 113vh;
     background: url(../images/pizza-with-turkey-bacon-orange-and-cashew-nuts-2022-03-29-07-33-54-utc.jpg) no-repeat;
     background-size: cover;
     background-position: center;

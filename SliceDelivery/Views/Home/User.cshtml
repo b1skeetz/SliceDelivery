@@ -6,6 +6,63 @@
 <head>
   <title>Личный кабинет</title>
   <link rel="stylesheet" type="text/css" href="css.css">
+  <style>
+      .container{
+          margin-top: 90px;
+          margin-bottom: 150px;
+      }
+     
+       .superBody{
+           margin-top: 150px !important;
+       }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: "Helvetica Neue", Arial, sans-serif;
+            font-size: 14px;
+            margin: 0;
+            padding: 20px;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f9f9f9;
+        }
+
+        td > img {
+            max-width: 50px;
+            max-height: 50px;
+            vertical-align: middle;
+        }
+        .cartBot{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 25px;
+        }
+        .total-price {
+            font-weight: bold;
+        }
+         .order-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .order-btn:hover {
+            background-color: #45a049;
+        }
+  </style>
 </head>
 <body>
   <div class="container">
@@ -35,9 +92,24 @@
 
     <div class="profile-section">
       <div class="profile-section-title">История заказов</div>
-      <div class="profile-section-content">
-        <p>Здесь может быть список ваших предыдущих заказов с подробной информацией о каждом заказе.</p>
-      </div>
+      <table>
+        <thead>
+            <tr>
+                <th>Количество продуктов</th>
+                <th>Общая цена</th>
+                <th>Дата</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>5шт</td>
+                <td>5000</td>
+                <td>12.02.2022</td>
+            </tr>
+            <tr>
+         
+        </tbody>
+    </table>
     </div>
   </div>
 </body>

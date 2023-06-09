@@ -48,10 +48,10 @@
                 </button>
             }
 
-               <button id="user-btn">
+              
+              <button id="user-btn">
                     <a class="fas fa-user" id="user" asp-area="" asp-controller="Home" asp-action="User"></a>
                 </button>
-
             
 
 
@@ -81,8 +81,11 @@
 
         <div class="search-form">
             <h1 id="Search" type="text" class="search-input" id="search-box"> Search</h1>
-            <input>
-            <i class="fas fa-search"></i>
+            <input name="product" placeholder="Название продукта">
+            <a asp-area="" asp-controller="Home" asp-action="Search ">
+                    <i class="fas fa-search"></i>
+            </a>
+        
         </div>
         <div class="cart-items-container">
             <div class="cart-item">
