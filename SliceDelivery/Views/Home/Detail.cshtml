@@ -1,0 +1,363 @@
+﻿@model SliceDelivery.Domain.ViewModels.Profile.ProfileViewModel
+@{
+    ViewData["Title"] = "Privacy Policy";
+    string family = "55";
+    string name = "55";
+    string address = "55";
+    string phone = "55";
+    bool edit = false;
+}
+
+
+<head>
+    <title>Личный кабинет</title>
+    <link rel="stylesheet" type="text/css" href="css.css">
+    <style>
+        .container {
+            margin-top: 90px;
+            margin-bottom: 150px;
+        }
+
+        .superBody {
+            margin-top: 150px !important;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: "Helvetica Neue", Arial, sans-serif;
+            font-size: 14px;
+            margin: 0;
+            padding: 20px;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f9f9f9;
+        }
+
+        td > img {
+            max-width: 50px;
+            max-height: 50px;
+            vertical-align: middle;
+        }
+
+        .cartBot {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 25px;
+        }
+
+        .total-price {
+            font-weight: bold;
+        }
+
+        .order-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+            .order-btn:hover {
+                background-color: #45a049;
+            }
+
+        h2 {
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 18px;
+        }
+
+        input[type="text"], input[type="phone"],
+        input[type="password"] {
+            width: 50%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            display: block;
+            width: 50%;
+            padding: 10px;
+            background-color: #252525;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+            button:hover {
+                background-color: #F0B559;
+            }
+    </style>
+</head>
+<body>
+
+    <br />
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <form id="profileFormId">
+                        <input asp-for="Id" hidden="hidden" />
+                        <h5 class="card-title">Данные профиля</h5>
+                        <div class="mb-3">
+                            <label class="form-label text-black-50">Возраст</label>
+                            <input type="text" class="form-control" asp-for="Age">
+                            <div class="form-text">Возраст должен быть указан от 0 до 150 лет.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label text-black-50">Адрес</label>
+                            <textarea class="form-control" asp-for="Address" rows="3"></textarea>
+                            <div class="form-text">Длина адреса должна быть от 5 до 200 символов.</div>
+                        </div>
+                        <div class="card-buttons-group">
+                            <button class='btn btn-primary' id='saveProfileId'>Сохранить</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <form id="accountFormId">
+                        <h5 class="card-title">Данные аккаунта</h5>
+                        <div class="mb-3">
+                            <label class="form-label text-black-50">Логин</label>
+                            <input type="text" class="form-control" asp-for="UserName" disabled="disabled">
+                            <div class="form-text">Длина логина должна быть от 3 до 20 символов.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label text-black-50">Новый пароль</label>
+                            <input name="NewPassword" class="form-control textbox-dg font-weight-bold text-center" type="password">
+                        </div>
+                        <div class="card-buttons-group">
+                            <button class='btn btn-primary' id='saveAccountId'>Сохранить</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card text-center">
+                <div class="card-header">
+                    <ul class="nav nav-tabs card-header-tabs">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="@Url.Action("Index", "Home")">Главная</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("GetCars", "Car")">Автомобили</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Special title treatment</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @section pageScripts
+        {
+        <script>
+            $('#saveProfileId').on('click', function(e) {
+                e.preventDefault();
+                const data = $('#profileFormId').serialize()
+                $.ajax({
+                    url: '@Url.Action("Save", "Home")',
+                    type: 'POST',
+                    data: data,
+                    success: function(response) {
+                        Swal.fire({
+                            title: 'Информация',
+                            text: response.description,
+                            icon: 'success',
+                            confirmButtonText: 'Окей'
+                        })
+                    },
+                    error: function(data) {
+                        Swal.fire({
+                            title: 'Информация',
+                            text: 'Ошибка валидации',
+                            icon: 'error',
+                            confirmButtonText: 'Окей'
+                        })
+                    }
+                });
+            });
+
+            $('#saveAccountId').on('click', function(e) {
+                e.preventDefault();
+
+                $('#UserName').removeAttr('disabled')
+                const data = $('#accountFormId').serialize()
+                $('#UserName').attr('disabled', 'disabled')
+
+                $.ajax({
+                    url: '@Url.Action("ChangePassword", "Home")',
+                    type: 'POST',
+                    data: data,
+                    success: function(response) {
+                        Swal.fire({
+                            title: 'Информация',
+                            text: response.description,
+                            icon: 'success',
+                            confirmButtonText: 'Окей'
+                        })
+                    },
+                    error: function(response) {
+                        Swal.fire({
+                            title: 'Информация',
+                            text: response.responseJSON.errorMessage,
+                            icon: 'error',
+                            confirmButtonText: 'Окей'
+                        })
+                    }
+                });
+            });
+        </script>
+    }
+
+        @*<div class="container">
+    <div class="profile-header">
+    <div class="profile-avatar">
+    <img src="~/images/path_to_your_avatar.jpg" alt="Аватар">
+    </div>
+    <div class="profile-info">
+    <div class="profile-name">Имя пользователя</div>
+    <!--<div class="profile-email">user@example.com</div>-->
+    </div>
+    </div>
+
+    <div class="profile-section">
+    <div class="profile-section-title">Персональная информация</div>
+    <div class="profile-section-content">
+    <form method="post" asp-controller="HomeController" asp-action="UpdateProfile">
+    <div class="form-group">
+    <label for="username">Фамилия</label>
+    @if (family != "")
+    {
+    <span>Ваша фамилия</span>
+    }
+
+    @if (edit)
+    {
+    <input type="text" id="firstName" name="firstName" placeholder="Введите вашу фамилию">
+    }
+
+
+    </div>
+    <div class="form-group">
+    <label for="name">Имя</label>
+    @if (name != "")
+    {
+    <span>Ваше имя</span>
+    }
+
+    @if (edit)
+    {
+    <input type="text" id="name" name="name" placeholder="Введите ваше имя">
+    }
+
+    </div>
+
+    <div class="form-group">
+    <label for="address">Адрес</label>
+    @if (address != "")
+    {
+    <span>Ваш адрес</span>
+    }
+
+    @if (edit)
+    {
+    <input type="text" id="address" name="address" placeholder="Введите ваш адрес">
+    }
+
+    </div>
+
+    <div class="form-group">
+    <label for="phone">Телефон</label>
+    @if (phone != "")
+    {
+    <span>Ваш номер телефона</span>
+    }
+
+    @if (edit)
+    {
+    <input type="phone" id="phone" name="phone" placeholder="Введите ваш телефон">
+    }
+
+    </div>
+    <button id="entrance-btn editBtn" type="button" onclick="changeViewBag()">Изменить данные</button>
+    @if (edit)
+    {
+    <button id="entrance-btn" type="submit" style="margin-top: 15px">Сохранить изменения</button>
+
+    }
+
+    </form>
+    </div>
+    </div>
+
+    <div class="profile-section">
+    <div class="profile-section-title">Настройки</div>
+    <div class="profile-section-content">
+    <p>Здесь могут быть ваши настройки аккаунта, такие как предпочитаемый язык, уведомления и другие параметры.</p>
+    </div>
+    </div>
+
+    <div class="profile-section">
+    <div class="profile-section-title">История заказов</div>
+    <table>
+    <thead>
+    <tr>
+    <th>Количество продуктов</th>
+    <th>Общая цена</th>
+    <th>Дата</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>5шт</td>
+    <td>5000</td>
+    <td>12.02.2022</td>
+    </tr>
+    <tr>
+
+    </tbody>
+    </table>
+    </div>
+    </div>
+    <script>
+    function changeViewBag() {
+    @{
+    edit = true;
+    }
+    }
+    </script>*@
+    </body>

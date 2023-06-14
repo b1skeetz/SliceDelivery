@@ -11,14 +11,12 @@ namespace SliceDelivery.Service.Interfaces
 {
     public interface IProductService
     {
-        Task<BaseResponse<IEnumerable<Product>>> GetProducts();
+        IBaseResponse<List<Product>> GetProducts();
 
-        Task<BaseResponse<Product>> GetProduct(int id);
+        Task<IBaseResponse<ProductViewModel>> GetProduct(long id);
 
-        Task<BaseResponse<ProductViewModel>> CreateProduct(ProductViewModel productViewModel);
+        Task<BaseResponse<Dictionary<int, string>>> GetProduct(string term);
 
-        Task<BaseResponse<bool>> DeleteProduct(int id);
-        Task<BaseResponse<Product>> GetProductByName(string name);
-        Task<BaseResponse<Product>> Edit(int id, ProductViewModel model);
+        Task<IBaseResponse<Product>> Edit(long id, ProductViewModel model);
     }
 }

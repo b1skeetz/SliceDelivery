@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace SliceDelivery.DAL.Repositories
 {
-    public class ProductRepository : IProductRepository
+    public class ProductRepository : IBaseRepository<Product>
     {
         private readonly DiplomaContext _db;
         public ProductRepository(DiplomaContext db)
@@ -17,39 +17,28 @@ namespace SliceDelivery.DAL.Repositories
             _db = db;
         }
 
-        public async Task<bool> Create(Product entity)
+        public async Task Create(Product entity)
         {
             await _db.Products.AddAsync(entity);
             await _db.SaveChangesAsync();
-            return true;
         }
 
-        public async Task<bool> Delete(Product entity)
+        public IQueryable<Product> GetAll()
+        {
+            return _db.Products;
+        }
+
+        public async Task Delete(Product entity)
         {
             _db.Products.Remove(entity);
             await _db.SaveChangesAsync();
-            return true;
-        }
-
-        public async Task<Product> Get(int id)
-        {
-            return await _db.Products.FirstOrDefaultAsync(x => x.Id == id);
-        }
-
-        public async Task<Product> GetByName(string name)
-        {
-            return await _db.Products.FirstOrDefaultAsync(x => x.Name == name);
-        }
-
-        public async Task<List<Product>> Select()
-        {
-            return await _db.Products.ToListAsync();
         }
 
         public async Task<Product> Update(Product entity)
         {
             _db.Products.Update(entity);
             await _db.SaveChangesAsync();
+
             return entity;
         }
     }

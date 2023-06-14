@@ -1,5 +1,7 @@
-﻿@{
+﻿@model IEnumerable<SliceDelivery.Domain.Models.Product>
+@{
     ViewData["Title"] = "Home Page";
+    Layout = "_Layout";
 }
 
 <section class="home" id="home">
@@ -9,6 +11,27 @@
         <a id="order" href="#" class="btn">order now</a>
         </div>
     </section>
+    
+<section class="menu" id="menu">
+    <h1 id="our" class="heading">our menu</h1>
+    <div class="box-container">
+        @foreach (var prod in Model)
+        {
+            <div class="box">
+                <div class="box-head">
+                    <img src="@prod.Avatar" alt="">
+                    <span id="Pizza" class="menu-category">@prod.Category</span>
+                    <h3 id="Mini_Pizzas">@prod.Name</h3>
+                    <div class="price">$@prod.CurrentPrice<span>$@prod.OldPrice</span></div>
+                </div>
+                <div class="box-bottom">
+                    <a href="#" class="btn">add to cart</a>
+                </div>
+            </div>
+        }
+    </div>
+</section>
+    @*
     <section class="menu" id="menu">
         <h1 id="our" class="heading">our menu</h1>
         <div class="box-container">
@@ -63,7 +86,7 @@
             </div>
         </div>
     </section>
-
+    *@
     <!--
     <section class="products" id="products">
         <h1 id=" our_products" class="heading">our products </h1>

@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Crowley\\Source\\Repos\\b1skeetz\\SliceDelivery\\SliceDelivery.Domain\\SliceDelivery.Domain.csproj": {}
+    "C:\\Users\\damir\\Source\\Repos\\b1skeetz\\SliceDelivery\\SliceDelivery.Domain\\SliceDelivery.Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Crowley\\Source\\Repos\\b1skeetz\\SliceDelivery\\SliceDelivery.Domain\\SliceDelivery.Domain.csproj": {
+    "C:\\Users\\damir\\Source\\Repos\\b1skeetz\\SliceDelivery\\SliceDelivery.Domain\\SliceDelivery.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Crowley\\Source\\Repos\\b1skeetz\\SliceDelivery\\SliceDelivery.Domain\\SliceDelivery.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\damir\\Source\\Repos\\b1skeetz\\SliceDelivery\\SliceDelivery.Domain\\SliceDelivery.Domain.csproj",
         "projectName": "SliceDelivery.Domain",
-        "projectPath": "C:\\Users\\Crowley\\Source\\Repos\\b1skeetz\\SliceDelivery\\SliceDelivery.Domain\\SliceDelivery.Domain.csproj",
-        "packagesPath": "C:\\Users\\Crowley\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Crowley\\Source\\Repos\\b1skeetz\\SliceDelivery\\SliceDelivery.Domain\\obj\\",
+        "projectPath": "C:\\Users\\damir\\Source\\Repos\\b1skeetz\\SliceDelivery\\SliceDelivery.Domain\\SliceDelivery.Domain.csproj",
+        "packagesPath": "C:\\Users\\damir\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\damir\\Source\\Repos\\b1skeetz\\SliceDelivery\\SliceDelivery.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Crowley\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\damir\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -43,14 +43,19 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Http.Features": {
+              "target": "Package",
+              "version": "[5.0.17, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -59,7 +64,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     }

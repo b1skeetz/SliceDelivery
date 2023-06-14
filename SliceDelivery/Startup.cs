@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -30,9 +31,23 @@ namespace SliceDelivery
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddDbContext<DiplomaContext>();         
-            services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddDbContext<DiplomaContext>();
+            services.AddScoped<IBaseRepository<Product>, ProductRepository>();
+            services.AddScoped<IBaseRepository<User>, UserRepository>();
+            services.AddScoped<IBaseRepository<Basket>, BasketRepository>();
+            services.AddScoped<IBaseRepository<Profile>, ProfileRepository>();
             services.AddScoped<IProductService, ProductService>();
+            services.AddScoped<IAccountService, AccountService>();
+            services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IProfileService, ProfileService>();
+            services.AddAuthorization();
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(options =>
+                {
+                    options.LoginPath = new Microsoft.AspNetCore.Http.PathString("/Home/Login");
+                    options.AccessDeniedPath = new Microsoft.AspNetCore.Http.PathString("/Home/Login");
+                });
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -53,6 +68,7 @@ namespace SliceDelivery
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

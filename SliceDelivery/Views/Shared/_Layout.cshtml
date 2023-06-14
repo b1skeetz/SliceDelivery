@@ -1,3 +1,4 @@
+@using System.Security.Claims;
 @{
     int? status = @ViewBag.Number;
     string attributeValue0 = status == 0 ? "active" : "";
@@ -25,49 +26,55 @@
         <a asp-area="" asp-controller="Home" asp-action="Index" class="logo">
             <img src="~/images/logo.png" alt="logo">
         </a>
-          <nav class="navbar">
-                    <a id="greeting" class="@attributeValue0" asp-area="" asp-controller="Home" asp-action="Index">home</a>
-                    <a id="about" class="@attributeValue1" asp-area="" asp-controller="Home" asp-action="About">About Us</a>
-                    <a id="menu" class="@attributeValue2" asp-area="" asp-controller="Home" asp-action="Menu">menu</a>
-                 <!---   <a id="Products" class="@attributeValue3" asp-area="" asp-controller="Home" asp-action="Products">products</a>-->
-                    <a id="Review" class="@attributeValue4" asp-area="" asp-controller="Home" asp-action="Review">review</a>
-                    <a id="contact" class="@attributeValue5" asp-area="" asp-controller="Home" asp-action="Contact">contact</a>
-                    <a id="blog" class="@attributeValue6" asp-area="" asp-controller="Home" asp-action="Blog">blog</a>
-       </nav>
+        <nav class="navbar">
+            <a id="greeting" class="@attributeValue0" asp-area="" asp-controller="Home" asp-action="Index">home</a>
+            <a id="about" class="@attributeValue1" asp-area="" asp-controller="Home" asp-action="About">About Us</a>
+            <a id="menu" class="@attributeValue2" asp-area="" asp-controller="Home" asp-action="Menu">menu</a>
+            <!---   <a id="Products" class="@attributeValue3" asp-area="" asp-controller="Home" asp-action="Products">products</a>-->
+            <a id="Review" class="@attributeValue4" asp-area="" asp-controller="Home" asp-action="Review">review</a>
+            <a id="contact" class="@attributeValue5" asp-area="" asp-controller="Home" asp-action="Contact">contact</a>
+            <a id="blog" class="@attributeValue6" asp-area="" asp-controller="Home" asp-action="Blog">blog</a>
+        </nav>
         <div class="buttons headerBtns">
             <button id="search-btn">
                 <i class="fas fa-search"></i>
             </button>
-         
-            @if(!User.Identity.IsAuthenticated){
+
+            @if (!User.Identity.IsAuthenticated)
+            {
                 <button id="login-btn">
                     <a class="fas btns" id="login" asp-area="" asp-controller="Home" asp-action="Login">Вход</a>
                 </button>
-                 <button id="register-btn">
+                <button id="register-btn">
                     <a class="fas btns" id="register" asp-area="" asp-controller="Home" asp-action="Register">Регистрация</a>
                 </button>
             }
 
-              
-              <button id="user-btn">
-                    <a class="fas fa-user" id="user" asp-area="" asp-controller="Home" asp-action="User"></a>
-                </button>
-            
+
+            @* <button id="user-btn">
+            <a class="fas fa-user" id="user" asp-area="" asp-controller="Home" asp-action="Detail"></a>
+            </button>*@
+
 
 
             @if (User.Identity.IsAuthenticated)
             {
-                       <button id="cart-btn">
+                <button id="cart-btn">
                     <a class="fas fa-shopping-cart" id="cart" asp-area="" asp-controller="Home" asp-action="Cart"></a>
                 </button>
                 <button id="user-btn">
-                    <a class="fas fa-user" id="user" asp-area="" asp-controller="Home" asp-action="User"></a>
+                    <a class="fas fa-user" id="user" asp-area="" asp-controller="Home" asp-action="Detail"></a>
                 </button>
+
+                @using (Html.BeginForm("Logout", "Home"))
+                {
+                    @Html.AntiForgeryToken()
+                }
                 <button id="out-btn">
-                    <a class="fas btns" id="out" asp-area="" asp-controller="Home" asp-action="Out">Выход</a>
+                    <a class="fas btns" id="out" asp-area="" asp-controller="Home" asp-action="Logout">Выход</a>
                 </button>
             }
-            
+
 
             <button id="menu-btn">
                 <i class="fas fa-bars"></i>
@@ -83,9 +90,9 @@
             <h1 id="Search" type="text" class="search-input" id="search-box"> Search</h1>
             <input name="product" placeholder="Название продукта">
             <a asp-area="" asp-controller="Home" asp-action="Search ">
-                    <i class="fas fa-search"></i>
+                <i class="fas fa-search"></i>
             </a>
-        
+
         </div>
         <div class="cart-items-container">
             <div class="cart-item">
@@ -126,17 +133,17 @@
     <div class="bbooddyy">
         @RenderBody()
     </div>
-            
-        
+
+
     <section class="footer">
-      <!--  <div class="search">
-            <input type="text" class="search-input" placeholder="Search">
-            <button class="btn btn-primary">search</button>
-        </div>
+        <!--  <div class="search">
+              <input type="text" class="search-input" placeholder="Search">
+              <button class="btn btn-primary">search</button>
+          </div>
 
-        -->
+          -->
 
-          <div class="links">
+        <div class="links">
             <a href="#home">home</a>
             <a href="#about">about</a>
             <a href="#menu">menu</a>
@@ -152,12 +159,13 @@
             <a href="#" class="fab fa-instagram"></a>
 
         </div>
-      
+
     </section>
     <script src="script.js"></script>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
+    @await RenderSectionAsync("pageScripts", required: false)
 </body>
 </html>

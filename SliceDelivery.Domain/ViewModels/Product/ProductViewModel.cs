@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -16,6 +17,7 @@ namespace SliceDelivery.Domain.ViewModels.Product
         public double CurrentPrice { get; set; }
         public double OldPrice { get; set; }
         public string Category { get; set; }
-        public string Image { get; set; }
+        public IFormFile Avatar { get; set; }
+        public byte[] Image { get; set; }
     }
 }
