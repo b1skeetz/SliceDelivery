@@ -19,7 +19,8 @@
             max-width: 400px;
             margin: 100px auto;
             margin-bottom: 200px;
-            padding: 20px;
+            padding: 60px;
+            min-height: 369px;
             background-color: #fff;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -42,11 +43,13 @@
         input[type="text"],
         input[type="password"] {
             width: 100%;
-            padding: 10px;
+            padding: 15px 10px;
             border-radius: 5px;
+            height: 40px;
             border: 1px solid #ccc;
+            font-size: 14px;
         }
-
+       
         button {
             display: block;
             width: 100%;
@@ -61,8 +64,18 @@
             button:hover {
                 background-color: #F0B559;
             }
-
+            .btn-success{
+                width: 100%;
+                margin: 0;
+            }
+             ul, li{
+            font-size: 12px;
+            text-align: left;
+            margin-left: 5px;
+        }
         /* Анимация */
+
+       
 
     </style>
 
@@ -79,8 +92,8 @@
             <div class="form-group">
                 <input autocomplete="new-password" asp-for="Password" placeholder="Пароль" class="form-control textbox-dg font-weight-bold text-center" type="password">
             </div>
-            <div class="d-grid gap-2 d-md-block float-right">
-                <a asp-controller="Home" asp-action="Register" class="btn btn-primary" type="button">Регистрация</a>
+            <div class="d-grid gap-2 d-md-block">
+                <!-- <a asp-controller="Home" asp-action="Register" class="btn btn-primary" type="button">Регистрация</a>--!>
                 <button class="btn btn-success">Отправить</button>
             </div>
         </form>

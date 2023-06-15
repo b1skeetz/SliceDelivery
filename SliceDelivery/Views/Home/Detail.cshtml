@@ -13,6 +13,14 @@
     <title>Личный кабинет</title>
     <link rel="stylesheet" type="text/css" href="css.css">
     <style>
+        .row{
+            display: flex;
+            flex-direction: column;
+            width: 800px;
+            margin: 0 auto;
+            margin-bottom: 30px;
+        }
+
         .container {
             margin-top: 90px;
             margin-bottom: 150px;
@@ -94,6 +102,10 @@
             border: 1px solid #ccc;
         }
 
+        .card-body{
+            width: 100%;
+        }
+
         button {
             display: block;
             width: 50%;
@@ -105,6 +117,10 @@
             cursor: pointer;
         }
 
+        .btn-primary{
+            transform: scale(0.75);
+        }
+
             button:hover {
                 background-color: #F0B559;
             }
@@ -113,10 +129,10 @@
 <body>
 
     <br />
-    <div class="row">
-        <div class="col-sm-6">
+    <div class="row mb-45">
+        <div class="col-sm-12">
             <div class="card">
-                <div class="card-body">
+                <div class="card-body ">
                     <form id="profileFormId">
                         <input asp-for="Id" hidden="hidden" />
                         <h5 class="card-title">Данные профиля</h5>
@@ -137,7 +153,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-12">
             <div class="card">
                 <div class="card-body">
                     <form id="accountFormId">
@@ -160,27 +176,7 @@
         </div>
     </div>
     <br />
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="card text-center">
-                <div class="card-header">
-                    <ul class="nav nav-tabs card-header-tabs">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="@Url.Action("Index", "Home")">Главная</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="@Url.Action("GetCars", "Car")">Автомобили</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">Special title treatment</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-        </div>
-    </div>
+    
 
     @section pageScripts
         {
