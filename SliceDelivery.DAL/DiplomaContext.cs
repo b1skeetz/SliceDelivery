@@ -23,12 +23,12 @@ namespace SliceDelivery.DAL
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<Profile> Profiles { get; set; }
         public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<Mailers> Mailers { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
                 optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=Diploma;Username=postgres;Password=mercy07");
             }
         }
@@ -64,6 +64,8 @@ namespace SliceDelivery.DAL
                 entity.HasOne(d => d.User)
                     .WithOne(p => p.Profile)
                     .HasForeignKey<Profile>(d => d.UserId);
+
+                entity.Property(x => x.Address).HasMaxLength(200);
             });
 
             OnModelCreatingPartial(modelBuilder);

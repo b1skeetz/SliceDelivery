@@ -15,7 +15,7 @@ namespace SliceDelivery.Service.Interfaces
 
         Task<IBaseResponse<ProductViewModel>> GetProduct(long id);
 
-        Task<BaseResponse<Dictionary<int, string>>> GetProduct(string term);
+        IBaseResponse<Dictionary<int, string>> GetProduct(string term);
 
         Task<IBaseResponse<Product>> Edit(long id, ProductViewModel model);
     }

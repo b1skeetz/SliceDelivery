@@ -6,7 +6,7 @@ namespace SliceDelivery.Domain.Models
     {
         public long Id { get; set; }
         
-        public long? CarId { get; set; }
+        public long? ProductId { get; set; }
 
         public DateTime DateCreated { get; set; }
 

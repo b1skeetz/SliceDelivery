@@ -18,6 +18,6 @@ namespace SliceDelivery.Domain.ViewModels.Product
         public double OldPrice { get; set; }
         public string Category { get; set; }
         public IFormFile Avatar { get; set; }
-        public byte[] Image { get; set; }
+        public string Image { get; set; }
     }
 }

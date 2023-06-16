@@ -6,17 +6,17 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
-using SliceDelivery.DAL;
-using SliceDelivery.Domain.Models;
-using SliceDelivery.DAL.Interfaces;
 using SliceDelivery.Service.Interfaces;
 using SliceDelivery.Domain.ViewModels.Account;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Http;
-using SliceDelivery.Service.Interfaces;
 using SliceDelivery.Domain.ViewModels.Profile;
+using SliceDelivery.Domain.ViewModels.Order;
+using SliceDelivery.Domain.Response;
+using SliceDelivery.Domain.ViewModels.Mailer;
+using SliceDelivery.Domain.Models;
 
 namespace SliceDelivery.Controllers
 {
@@ -26,23 +26,46 @@ namespace SliceDelivery.Controllers
         private readonly IProductService _productService;
         private readonly IAccountService _accountService;
         private readonly IProfileService _profileService;
-        public HomeController(ILogger<HomeController> logger, IProductService productService, IAccountService accountService, IProfileService profileService)
+        private readonly IOrderService _orderService;
+        private readonly IBasketService _basketService;
+        private readonly IMailerService _mailerService;
+
+        public HomeController(ILogger<HomeController> logger, IProductService productService,
+            IAccountService accountService, IProfileService profileService,
+            IOrderService orderService, IBasketService basketService, IMailerService mailerService)
         {
             _logger = logger;
             _productService = productService;
             _accountService = accountService;
             _profileService = profileService;
+            _orderService = orderService;
+            _basketService = basketService;
+            _mailerService = mailerService;
         }
+        // ProductController
         [HttpGet]
-        public IActionResult IndexAsync()
+        public IActionResult IndexAsync(MailerViewModel mailerViewModel)
         {
             var response = _productService.GetProducts();
             if (response.StatusCode == Domain.Enum.StatusCode.OK)
             {
                 ViewBag.Number = 0;
-                return View(response.Data);
+                var model = (response.Data.AsEnumerable(), mailerViewModel);
+                return View(model);
             }
             return View("Error", $"{response.Description}");
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Mailer(MailerViewModel model)
+        {
+            var response = await _mailerService.Create(model);
+            if (response.StatusCode == Domain.Enum.StatusCode.OK)
+            {
+                return Json(new { description = response.Description });
+            }
+
+            return StatusCode(StatusCodes.Status500InternalServerError);
         }
         /*
         public async Task<IActionResult> IndexAsync()
@@ -106,13 +129,13 @@ namespace SliceDelivery.Controllers
         {
             return View();
         }
-        public IActionResult Cart()
-        {
-            return View();
-        }
+        //public IActionResult Cart()
+        //{
+        //    return View();
+        //}
 
         //----------------------------------------------------------------------------
-
+        // AccountController
         [HttpPost]
         public async Task<IActionResult> Register(RegisterViewModel model)
         {
@@ -149,7 +172,6 @@ namespace SliceDelivery.Controllers
             return View(model);
         }
 
-        
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
@@ -172,7 +194,7 @@ namespace SliceDelivery.Controllers
             return StatusCode(StatusCodes.Status500InternalServerError, new { modelError.FirstOrDefault().ErrorMessage });
         }
         //----------------------------------------------------------------------------
-
+        // ProfileContoller
         [HttpPost]
         public async Task<IActionResult> Save(ProfileViewModel model)
         {
@@ -198,6 +220,58 @@ namespace SliceDelivery.Controllers
                 return View(response.Data);
             }
             return View();
+        }
+
+        //----------------------------------------------------------------------------
+        // OrderController
+
+        [HttpGet]
+        public IActionResult CreateOrder(long id)
+        {
+            var orderModel = new CreateOrderViewModel()
+            {
+                ProductId = id,
+                Login = User.Identity.Name,
+                Quantity = 0
+            };
+            return View(orderModel);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CreateOrder(CreateOrderViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var response = await _orderService.Create(model);
+                if (response.StatusCode == Domain.Enum.StatusCode.OK)
+                {
+                    return Json(new { description = response.Description });
+                }
+            }
+            return StatusCode(StatusCodes.Status500InternalServerError);
+        }
+
+        public async Task<IActionResult> Delete(int id)
+        {
+            var response = await _orderService.Delete(id);
+            if (response.StatusCode == Domain.Enum.StatusCode.OK)
+            {
+                return RedirectToAction("Cart", "Home");
+            }
+            return View("Error", $"{response.Description}");
+        }
+
+        //----------------------------------------------------------------------------
+        // BasketController
+
+        public async Task<IActionResult> Cart()
+        {
+            var response = await _basketService.GetItems(User.Identity.Name);
+            if (response.StatusCode == Domain.Enum.StatusCode.OK)
+            {
+                return View(response.Data.ToList());
+            }
+            return RedirectToAction("Index", "Home");
         }
 
         //----------------------------------------------------------------------------

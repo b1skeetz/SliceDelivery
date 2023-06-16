@@ -1,0 +1,27 @@
+﻿@model SliceDelivery.Domain.ViewModels.Order.OrderViewModel
+@{
+    ViewData["Title"] = "GetItem";
+}
+
+
+<div class="row">
+    <div class="col-md-12">
+        <img src="data:image/jpeg;base64,@Model?.Image"
+             class="img-fluid rounded-start rounded">
+    </div>
+    <div class="col-md-6">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Товар: @Model.ProductName</li>
+            <li class="list-group-item">Тип: @Model.ProductType</li>
+            <li class="list-group-item">Описание: @Model.Description</li>
+            <li class="list-group-item">Цена: @Model.CurrentPrice</li>
+        </ul>
+    </div>
+    <div class="col-md-6">
+        <ul class="list-group list-group-flush">
+           <li class="list-group-item">ФИО: @Model.FirstName @Model.LastName.Substring(0, 1) @Model.MiddleName.Substring(0, 1)</li>
+            <li class="list-group-item">Адрес: @Model.Address</li>
+            <li class="list-group-item">Дата создания: @Model.DateCreate</li>
+       </ul> 
+    </div>
+</div>

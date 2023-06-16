@@ -419,3 +419,5 @@ C:\Users\damir\Source\Repos\b1skeetz\SliceDelivery\SliceDelivery\bin\Debug\net5.
 C:\Users\damir\Source\Repos\b1skeetz\SliceDelivery\SliceDelivery\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
 C:\Users\damir\Source\Repos\b1skeetz\SliceDelivery\SliceDelivery\bin\Debug\net5.0\System.IO.Pipelines.dll
 C:\Users\damir\Source\Repos\b1skeetz\SliceDelivery\SliceDelivery\obj\Debug\net5.0\Razor\Views\Home\Detail.cshtml.g.cs
+C:\Users\damir\Source\Repos\b1skeetz\SliceDelivery\SliceDelivery\obj\Debug\net5.0\Razor\Views\Home\GetItem.cshtml.g.cs
+C:\Users\damir\Source\Repos\b1skeetz\SliceDelivery\SliceDelivery\obj\Debug\net5.0\Razor\Views\Home\CreateOrder.cshtml.g.cs

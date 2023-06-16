@@ -1,3 +1,4 @@
+using SliceDelivery.Service.Interfaces;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -10,7 +11,6 @@ using SliceDelivery.DAL.Interfaces;
 using SliceDelivery.DAL.Repositories;
 using SliceDelivery.Domain.Models;
 using SliceDelivery.Service.Implementations;
-using SliceDelivery.Service.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,10 +36,15 @@ namespace SliceDelivery
             services.AddScoped<IBaseRepository<User>, UserRepository>();
             services.AddScoped<IBaseRepository<Basket>, BasketRepository>();
             services.AddScoped<IBaseRepository<Profile>, ProfileRepository>();
+            services.AddScoped<IBaseRepository<Order>, OrderRepository>();
+            services.AddScoped<IBaseRepository<Mailers>, MailerRepository>();
             services.AddScoped<IProductService, ProductService>();
             services.AddScoped<IAccountService, AccountService>();
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IProfileService, ProfileService>();
+            services.AddScoped<IBasketService, BasketService>();
+            services.AddScoped<IOrderService, OrderService>();
+            services.AddScoped<IMailerService, MailerService>();
             services.AddAuthorization();
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
                 .AddCookie(options =>

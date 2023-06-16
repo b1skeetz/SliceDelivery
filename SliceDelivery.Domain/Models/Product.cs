@@ -16,6 +16,6 @@ namespace SliceDelivery.Domain.Models
         public double CurrentPrice { get; set; }
         public double OldPrice { get; set; }
         public ProductType Category { get; set; }
-        public byte[] Avatar { get; set; }
+        public string Avatar { get; set; }
     }
 }

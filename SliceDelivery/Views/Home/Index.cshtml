@@ -1,4 +1,4 @@
-﻿@model IEnumerable<SliceDelivery.Domain.Models.Product>
+﻿@model System.ValueTuple<IEnumerable<SliceDelivery.Domain.Models.Product>, SliceDelivery.Domain.ViewModels.Mailer.MailerViewModel>
 @{
     ViewData["Title"] = "Home Page";
     Layout = "_Layout";
@@ -15,17 +15,17 @@
 <section class="menu" id="menu">
     <h1 id="our" class="heading">our menu</h1>
     <div class="box-container">
-        @foreach (var prod in Model)
+        @foreach (var prod in Model.Item1)
         {
             <div class="box">
                 <div class="box-head">
-                    <img src="@prod.Avatar" alt="">
                     <span id="Pizza" class="menu-category">@prod.Category</span>
                     <h3 id="Mini_Pizzas">@prod.Name</h3>
                     <div class="price">$@prod.CurrentPrice<span>$@prod.OldPrice</span></div>
+                    <img src="@prod?.Avatar" alt="@prod.Name" />
                 </div>
                 <div class="box-bottom">
-                    <a href="#" class="btn">add to cart</a>
+                    <a asp-controller="Home" asp-action="CreateOrder" asp-route-id="@prod.Id" class="btn">Add to cart</a>
                 </div>
             </div>
         }
@@ -222,21 +222,21 @@
         <h1 class="heading">contact <span>us</span> </h1>
         <div class="row">
             <iframe class="map"  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1250.622713006621!2d71.41501929839477!3d51.1776993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4245872cf57a5a1f%3A0x7e1babc14a321933!2z0JLRi9GB0YjQuNC5INC60L7Qu9C70LXQtNC2ICJBc3RhbmEgUG9seXRlY2huaWMiINCz0L7RgNC-0LTQsCDQndGD0YAt0KHRg9C70YLQsNC9!5e0!3m2!1sru!2skz!4v1683017357604!5m2!1sru!2skz" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            <form method="post" asp-controller="HomeController" asp-action="Mailer">
+            <form id="orderFormId" method="post" asp-controller="Home" asp-action="Mailer">
                 <h3>get in touch</h3>
                 <div class="inputBox">
                     <i class="fas fa-user"></i>
-                    <input type="text" name="name" placeholder="name">
+                    <input asp-for="Item2.Name" type="text" name="name" placeholder="name">
                 </div>
                 <div class="inputBox">
                     <i class="fas fa-envelope"></i>
-                    <input type="email" name="email" placeholder="email">
+                    <input asp-for="Item2.Email" type="email" name="email" placeholder="email">
                 </div>
                 <div class="inputBox">
                     <i class="fas fa-phone"></i>
-                    <input type="number" name="phone" placeholder="number">
+                    <input asp-for="Item2.Number" type="text" name="number" placeholder="number">
                 </div>
-                <input type="submit" class="btn" value="contact now">
+                <input id="mailer" type="submit" class="btn" value="contact now">
             </form>
         </div>
     </section>
@@ -277,4 +277,37 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>                 
+
+
+
+@section pageScripts
+    {
+    <script>
+        $('#mailer').on('click', function(e) {
+            e.preventDefault();
+            const model = $('#orderFormId').serialize();
+            $.ajax({
+                url: '@Url.Action("Mailer")',
+                type: 'POST',
+                data: model,
+                success: function(response) {
+                    Swal.fire({
+                        title: 'Информация',
+                        text: response.description,
+                        icon: 'success',
+                        confirmButtonText: 'Окей'
+                    })
+                },
+                error: function(response) {
+                    Swal.fire({
+                        title: 'Информация',
+                        text: 'Ошибка валидации | Заполните все поля',
+                        icon: 'error',
+                        confirmButtonText: 'Окей'
+                    })
+                }
+            })
+        });
+    </script>
+}

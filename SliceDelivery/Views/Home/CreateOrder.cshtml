@@ -1,0 +1,84 @@
+﻿@model SliceDelivery.Domain.ViewModels.Order.CreateOrderViewModel
+@{
+    Layout = "_Layout";
+    ViewBag.Title = "Оформление";
+}
+
+<div style="padding: 20px;"></div>
+
+<div class="row">
+    <div class="col-sm-6">
+        <div class="card">
+            <form id="orderFormId" asp-controller="Home" asp-action="CreateOrder">
+                <input asp-for="DateCreated" hidden />
+                <input asp-for="Login" hidden />
+                <input asp-for="ProductId" hidden />
+                <div asp-validation-summary="All" style="font-size:23px; font-family:Impact, serif" class="text-danger text-center"></div>
+                <h4 class="text-center">Форма создания заказа</h4>
+                <hr />
+                <div class="row">
+                    <div class="form-group col-md-4">
+                        <label class="col-form-label text-black-50"></label>
+                        <input asp-for="@Model.FirstName" type="text" class="form-control" asp-for="@Model.FirstName">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label class="col-form-label text-black-50"></label>
+                        <input asp-for="@Model.LastName" type="text" class="form-control" asp-for="@Model.LastName">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label class="col-form-label text-black-50"></label>
+                        <input asp-for="@Model.MiddleName" type="text" class="form-control" asp-for="@Model.MiddleName">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-4">
+                        <label class="col-form-label text-black-50"></label>
+                        <input  asp-for="@Model.Address" type="text" class="form-control" asp-for="@Model.Address">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label class="col-form-label text-black-50"></label>
+                        <input asp-for="@Model.Quantity" type="text" class="form-control" asp-for="@Model.Quantity">
+                    </div>
+                </div>
+                <div class="d-grid gap-2 d-md-block float-right">
+                    <button class="btn btn-success" id="createOrderId">Отправить</button>
+                </div>
+            </form>
+            <div class="card-body">
+                <a asp-controller="Home" asp-action="Index" class="card-link">Главная</a>
+                <a asp-controller="Home" asp-action="Menu" class="card-link">Меню</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section pageScripts
+    {
+    <script>
+        $('#createOrderId').on('click', function(e) {
+            e.preventDefault();
+            const model = $('#orderFormId').serialize();
+            $.ajax({
+                url: '@Url.Action("CreateOrder")',
+                type: 'POST',
+                data: model,
+                success: function(response) {
+                    Swal.fire({
+                        title: 'Информация',
+                        text: response.description,
+                        icon: 'success',
+                        confirmButtonText: 'Окей'
+                    })
+                },
+                error: function(response) {
+                    Swal.fire({
+                        title: 'Информация',
+                        text: 'Ошибка валидации | Заполните все поля',
+                        icon: 'error',
+                        confirmButtonText: 'Окей'
+                    })
+                }
+            })
+        });
+    </script>
+}

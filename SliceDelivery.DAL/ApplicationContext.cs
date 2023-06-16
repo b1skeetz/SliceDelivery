@@ -15,6 +15,7 @@ namespace SliceDelivery.DAL
         public DbSet<Profile>? Profiles { get; set; }
         public DbSet<Order>? Orders { get; set; }
         public DbSet<Basket>? Baskets { get; set; }
+        public DbSet<Mailers>? Mailers { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

@@ -62,12 +62,12 @@ namespace SliceDelivery.Service.Implementations
             }
         }
 
-        public async Task<BaseResponse<Dictionary<int, string>>> GetProduct(string term)
+        public IBaseResponse<Dictionary<int, string>> GetProduct(string term)
         {
             var baseResponse = new BaseResponse<Dictionary<int, string>>();
             try
             {
-                var product = await _productRepository.GetAll()
+                var product = _productRepository.GetAll()
                     .Select(x => new ProductViewModel()
                     {
                         Id = x.Id,
@@ -78,9 +78,10 @@ namespace SliceDelivery.Service.Implementations
                         Category = x.Category.GetDisplayName()
                     })
                     .Where(x => EF.Functions.Like(x.Name, $"%{term}%"))
-                    .ToDictionaryAsync(x => x.Id, t => t.Name);
+                    .ToDictionary(x => x.Id, t => t.Name);
 
                 baseResponse.Data = product;
+                baseResponse.StatusCode = StatusCode.OK;
                 return baseResponse;
             }
             catch (Exception ex)

@@ -18,7 +18,20 @@ namespace SliceDelivery.DAL.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 63)
                 .HasAnnotation("ProductVersion", "5.0.17")
                 .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+            modelBuilder.Entity("SliceDelivery.Domain.Models.Mailer", b =>
+            {
+                b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+                b.Property<string>("Name")
+                        .HasColumnType("text");
+                b.Property<string>("Email")
+                        .HasColumnType("text");
+                b.Property<string>("Number")
+                        .HasColumnType("text");
 
+            });
             modelBuilder.Entity("SliceDelivery.Domain.Models.Basket", b =>
                 {
                     b.Property<long>("Id")
@@ -50,7 +63,7 @@ namespace SliceDelivery.DAL.Migrations
                     b.Property<long?>("BasketId")
                         .HasColumnType("bigint");
 
-                    b.Property<long?>("CarId")
+                    b.Property<long?>("ProductId")
                         .HasColumnType("bigint");
 
                     b.Property<DateTime>("DateCreated")
@@ -79,8 +92,8 @@ namespace SliceDelivery.DAL.Migrations
                         .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
-                    b.Property<byte[]>("Avatar")
-                        .HasColumnType("bytea");
+                    b.Property<string>("Avatar")
+                        .HasColumnType("text");
 
                     b.Property<int>("Category")
                         .HasColumnType("integer");

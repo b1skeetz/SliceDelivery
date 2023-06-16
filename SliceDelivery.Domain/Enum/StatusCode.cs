@@ -13,6 +13,8 @@ namespace SliceDelivery.Domain.Enum
 
         ProductNotFound = 10,
 
+        OrderNotFound = 20,
+
         OK = 200,
         InternalServerError = 500,
 
