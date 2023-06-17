@@ -421,3 +421,10 @@ C:\Users\damir\Source\Repos\b1skeetz\SliceDelivery\SliceDelivery\bin\Debug\net5.
 C:\Users\damir\Source\Repos\b1skeetz\SliceDelivery\SliceDelivery\obj\Debug\net5.0\Razor\Views\Home\Detail.cshtml.g.cs
 C:\Users\damir\Source\Repos\b1skeetz\SliceDelivery\SliceDelivery\obj\Debug\net5.0\Razor\Views\Home\GetItem.cshtml.g.cs
 C:\Users\damir\Source\Repos\b1skeetz\SliceDelivery\SliceDelivery\obj\Debug\net5.0\Razor\Views\Home\CreateOrder.cshtml.g.cs
+C:\Users\damir\Source\Repos\b1skeetz\SliceDelivery\SliceDelivery\obj\Debug\net5.0\SliceDelivery.csproj.GenerateResource.cache
+C:\Users\damir\Source\Repos\b1skeetz\SliceDelivery\SliceDelivery\obj\Debug\net5.0\en-US\SliceDelivery.resources.dll
+C:\Users\damir\Source\Repos\b1skeetz\SliceDelivery\SliceDelivery\bin\Debug\net5.0\en-US\SliceDelivery.resources.dll
+C:\Users\damir\Source\Repos\b1skeetz\SliceDelivery\SliceDelivery\obj\Debug\net5.0\SliceDelivery.Resources.SharedResource.en-US.resources
+C:\Users\damir\Source\Repos\b1skeetz\SliceDelivery\SliceDelivery\bin\Debug\net5.0\ru-RU\SliceDelivery.resources.dll
+C:\Users\damir\Source\Repos\b1skeetz\SliceDelivery\SliceDelivery\obj\Debug\net5.0\SliceDelivery.Resources.SharedResource.ru-RU.resources
+C:\Users\damir\Source\Repos\b1skeetz\SliceDelivery\SliceDelivery\obj\Debug\net5.0\ru-RU\SliceDelivery.resources.dll
