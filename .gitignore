@@ -1,4 +1,7 @@
 .vs/
-./SliceDelivery/bin/Debug/net5.0/
+./SliceDelivery/bin/Debug/
 .bin/
-./SliceDelivery/bin/Debug/net5.0/
+./SliceDelivery/bin/Debug/
+./SliceDelivery.DAL/bin/
+./SliceDelivery.Domain/bin/
+./SliceDelivery.Service/bin/
