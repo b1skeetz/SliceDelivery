@@ -42,7 +42,6 @@ C:\Users\Crowley\source\repos\b1skeetz\SliceDelivery\SliceDelivery\obj\Debug\net
 C:\Users\Crowley\source\repos\b1skeetz\SliceDelivery\SliceDelivery\obj\Debug\net5.0\Razor\Views\Home\Menu.cshtml.g.cs
 C:\Users\Crowley\source\repos\b1skeetz\SliceDelivery\SliceDelivery\obj\Debug\net5.0\Razor\Views\Home\Products.cshtml.g.cs
 C:\Users\Crowley\source\repos\b1skeetz\SliceDelivery\SliceDelivery\obj\Debug\net5.0\Razor\Views\Home\Review.cshtml.g.cs
-C:\Users\Crowley\source\repos\b1skeetz\SliceDelivery\SliceDelivery\obj\Debug\net5.0\Razor\Views\Home\User.cshtml.g.cs
 C:\Users\damir\source\repos\SliceDelivery\SliceDelivery\bin\Debug\net5.0\appsettings.Development.json
 C:\Users\damir\source\repos\SliceDelivery\SliceDelivery\bin\Debug\net5.0\appsettings.json
 C:\Users\damir\source\repos\SliceDelivery\SliceDelivery\bin\Debug\net5.0\SliceDelivery.exe
@@ -273,7 +272,6 @@ C:\Users\Crowley\Source\Repos\b1skeetz\SliceDelivery\SliceDelivery\bin\Debug\net
 C:\Users\Crowley\Source\Repos\b1skeetz\SliceDelivery\SliceDelivery\bin\Debug\net5.0\SliceDelivery.DAL.pdb
 C:\Users\Crowley\Source\Repos\b1skeetz\SliceDelivery\SliceDelivery\bin\Debug\net5.0\SliceDelivery.Domain.pdb
 C:\Users\Crowley\Source\Repos\b1skeetz\SliceDelivery\SliceDelivery\bin\Debug\net5.0\SliceDelivery.Service.pdb
-C:\Users\Crowley\Source\Repos\b1skeetz\SliceDelivery\SliceDelivery\obj\Debug\net5.0\Razor\Views\Product\GetProducts.cshtml.g.cs
 C:\Users\Crowley\Source\Repos\b1skeetz\SliceDelivery\SliceDelivery\obj\Debug\net5.0\Razor\Views\Home\Login.cshtml.g.cs
 C:\Users\Crowley\Source\Repos\b1skeetz\SliceDelivery\SliceDelivery\obj\Debug\net5.0\Razor\Views\Home\Register.cshtml.g.cs
 C:\Users\Crowley\Source\Repos\b1skeetz\SliceDelivery\SliceDelivery\obj\Debug\net5.0\Razor\Views\Home\Cart.cshtml.g.cs
@@ -419,6 +417,7 @@ C:\Users\damir\Source\Repos\b1skeetz\SliceDelivery\SliceDelivery\bin\Debug\net5.
 C:\Users\damir\Source\Repos\b1skeetz\SliceDelivery\SliceDelivery\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
 C:\Users\damir\Source\Repos\b1skeetz\SliceDelivery\SliceDelivery\bin\Debug\net5.0\System.IO.Pipelines.dll
 C:\Users\damir\Source\Repos\b1skeetz\SliceDelivery\SliceDelivery\obj\Debug\net5.0\Razor\Views\Home\Detail.cshtml.g.cs
+<<<<<<< HEAD
 C:\Users\damir\Source\Repos\b1skeetz\SliceDelivery\SliceDelivery\obj\Debug\net5.0\Razor\Views\Home\GetItem.cshtml.g.cs
 C:\Users\damir\Source\Repos\b1skeetz\SliceDelivery\SliceDelivery\obj\Debug\net5.0\Razor\Views\Home\CreateOrder.cshtml.g.cs
 C:\Users\damir\Source\Repos\b1skeetz\SliceDelivery\SliceDelivery\obj\Debug\net5.0\SliceDelivery.csproj.GenerateResource.cache
@@ -428,3 +427,10 @@ C:\Users\damir\Source\Repos\b1skeetz\SliceDelivery\SliceDelivery\obj\Debug\net5.
 C:\Users\damir\Source\Repos\b1skeetz\SliceDelivery\SliceDelivery\bin\Debug\net5.0\ru-RU\SliceDelivery.resources.dll
 C:\Users\damir\Source\Repos\b1skeetz\SliceDelivery\SliceDelivery\obj\Debug\net5.0\SliceDelivery.Resources.SharedResource.ru-RU.resources
 C:\Users\damir\Source\Repos\b1skeetz\SliceDelivery\SliceDelivery\obj\Debug\net5.0\ru-RU\SliceDelivery.resources.dll
+=======
+C:\Users\Crowley\Source\Repos\b1skeetz\SliceDelivery\SliceDelivery\bin\Debug\net5.0\Microsoft.AspNetCore.Http.Features.dll
+C:\Users\Crowley\Source\Repos\b1skeetz\SliceDelivery\SliceDelivery\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
+C:\Users\Crowley\Source\Repos\b1skeetz\SliceDelivery\SliceDelivery\bin\Debug\net5.0\System.IO.Pipelines.dll
+C:\Users\Crowley\Source\Repos\b1skeetz\SliceDelivery\SliceDelivery\obj\Debug\net5.0\Razor\Views\Home\Detail.cshtml.g.cs
+>>>>>>> 47acd4bcd3a5901d012c36a8f2b03c24b3c94132
+>>>>>>> 32226a5e402df5e83437f2b56c1b9d6b59decb7f

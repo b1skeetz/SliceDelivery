@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "2/JcMyl5fF3Q6tIhN8xhotHKE21vgLIe3tbz4Qzv9F98HDuNs0y8GRXGJ+0vcVyiCXKyIV/5iuCCtY5SwdylGQ==",
+  "dgSpecHash": "FzT+oiFi1VXShkOeaMogtd68m+UAmLNjWi36mpza7xYIFZWlfXr5GEOM5FX8ovg0caSkvRBdiEp5qrr9u4PStg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\damir\\source\\repos\\b1skeetz\\SliceDelivery\\SliceDelivery\\SliceDelivery.csproj",
+  "projectFilePath": "C:\\Users\\damir\\Source\\Repos\\b1skeetz\\SliceDelivery\\SliceDelivery\\SliceDelivery.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\damir\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\damir\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
