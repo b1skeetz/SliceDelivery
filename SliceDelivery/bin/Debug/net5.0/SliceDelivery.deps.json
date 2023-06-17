@@ -322,6 +322,14 @@
         "runtime": {
           "SliceDelivery.dll": {}
         },
+        "resources": {
+          "en-US/SliceDelivery.resources.dll": {
+            "locale": "en-US"
+          },
+          "ru-RU/SliceDelivery.resources.dll": {
+            "locale": "ru-RU"
+          }
+        },
         "compile": {
           "SliceDelivery.dll": {}
         }

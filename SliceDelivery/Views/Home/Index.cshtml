@@ -1,9 +1,10 @@
-﻿@model System.ValueTuple<IEnumerable<SliceDelivery.Domain.Models.Product>, SliceDelivery.Domain.ViewModels.Mailer.MailerViewModel>
+﻿@using SliceDelivery.Controllers
+@model System.ValueTuple<IEnumerable<SliceDelivery.Domain.Models.Product>, SliceDelivery.Domain.ViewModels.Mailer.MailerViewModel>
 @{
     ViewData["Title"] = "Home Page";
     Layout = "_Layout";
 }
-
+@inject LanguageService language
 <section class="home" id="home">
         <div class="content">
         <h3 id='Welcome'>Welcome</h3>
