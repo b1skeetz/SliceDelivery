@@ -29,13 +29,18 @@ namespace SliceDelivery.DAL
         {
             if (!optionsBuilder.IsConfigured)
             {
+<<<<<<< HEAD
                 optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=Diploma;Username=postgres;Password=mercy07");
+=======
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+                optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=Diploma;Username=postgres;Password=postgres");
+>>>>>>> 47acd4bcd3a5901d012c36a8f2b03c24b3c94132
             }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.HasAnnotation("Relational:Collation", "Kazakh_Kazakhstan.utf8");
+            modelBuilder.HasAnnotation("Relational:Collation", "Russian_Russia.1251");
 
             modelBuilder.Entity<Basket>(entity =>
             {
