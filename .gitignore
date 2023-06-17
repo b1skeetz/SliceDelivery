@@ -1,1 +1,12 @@
 .vs/
+./SliceDelivery/bin/Debug/
+.bin/
+./SliceDelivery/bin/
+./SliceDelivery.DAL/bin/
+./SliceDelivery.Domain/bin/
+./SliceDelivery.Service/bin/
+./SliceDelivery/bin/Debug/
+./SliceDelivery.DAL/obj/
+./SliceDelivery.Domain/obj/
+./SliceDelivery.Service/obj/
+./SliceDelivery/obj/

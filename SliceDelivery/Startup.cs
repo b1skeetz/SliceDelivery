@@ -15,6 +15,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Reflection;
+using SliceDelivery.Controllers;
+using System.Globalization;
+using Microsoft.AspNetCore.Localization;
+using Microsoft.Extensions.Options;
 
 namespace SliceDelivery
 {
@@ -47,11 +52,39 @@ namespace SliceDelivery
             services.AddScoped<IMailerService, MailerService>();
             services.AddAuthorization();
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-                .AddCookie(options =>
+            .AddCookie(options =>
+            {
+                options.LoginPath = new Microsoft.AspNetCore.Http.PathString("/Home/Login");
+                options.AccessDeniedPath = new Microsoft.AspNetCore.Http.PathString("/Home/Login");
+            });
+
+            services.AddSingleton<LanguageService>();
+            services.AddLocalization(options => options.ResourcesPath = "Resources");
+
+            services.AddMvc()
+            .AddViewLocalization()
+            .AddDataAnnotationsLocalization(options =>
+            {
+                options.DataAnnotationLocalizerProvider = (type, factory) =>
                 {
-                    options.LoginPath = new Microsoft.AspNetCore.Http.PathString("/Home/Login");
-                    options.AccessDeniedPath = new Microsoft.AspNetCore.Http.PathString("/Home/Login");
-                });
+                    var assemblyName = new AssemblyName(typeof(ShareResource).GetTypeInfo().Assembly.FullName);
+                    return factory.Create("ShareResource", assemblyName.Name);
+                };
+            });
+            services.Configure<RequestLocalizationOptions>(
+            options =>
+            {
+                var supportedCultures = new List<CultureInfo>
+                {
+                        new CultureInfo("en-US"),
+                        new CultureInfo("ru-RU"),
+                };
+                options.DefaultRequestCulture = new RequestCulture(culture: "en-US", uiCulture: "en-US");
+                options.SupportedCultures = supportedCultures;
+                options.SupportedUICultures = supportedCultures;
+
+                options.RequestCultureProviders.Insert(0, new QueryStringRequestCultureProvider());
+            });
             
         }
 
@@ -68,6 +101,9 @@ namespace SliceDelivery
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+            var locOptions = app.ApplicationServices.GetService<IOptions<RequestLocalizationOptions>>();
+            app.UseRequestLocalization(locOptions.Value);
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 

@@ -1,4 +1,6 @@
 @using System.Security.Claims;
+@using SliceDelivery.Controllers
+@inject LanguageService language
 @{
     int? status = @ViewBag.Number;
     string attributeValue0 = status == 0 ? "active" : "";
@@ -9,7 +11,6 @@
     string attributeValue5 = status == 5 ? "active" : "";
     string attributeValue6 = status == 6 ? "active" : "";
 }
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,9 +28,9 @@
             <img src="~/images/logo.png" alt="logo">
         </a>
         <nav class="navbar">
-            <a id="greeting" class="@attributeValue0" asp-area="" asp-controller="Home" asp-action="Index">home</a>
-            <a id="about" class="@attributeValue1" asp-area="" asp-controller="Home" asp-action="About">About Us</a>
-            <a id="menu" class="@attributeValue2" asp-area="" asp-controller="Home" asp-action="Menu">menu</a>
+            <a id="greeting" class="@attributeValue0" asp-area="" asp-controller="Home" asp-action="Index">@language.GetKey("home")</a>
+            <a id="about" class="@attributeValue1" asp-area="" asp-controller="Home" asp-action="About">@language.GetKey("aboutUs")</a>
+            <a id="menu" class="@attributeValue2" asp-area="" asp-controller="Home" asp-action="Menu">@language.GetKey("menu")</a>
             <!---   <a id="Products" class="@attributeValue3" asp-area="" asp-controller="Home" asp-action="Products">products</a>-->
             <a id="Review" class="@attributeValue4" asp-area="" asp-controller="Home" asp-action="Review">review</a>
             <a id="contact" class="@attributeValue5" asp-area="" asp-controller="Home" asp-action="Contact">contact</a>
@@ -80,9 +81,17 @@
                 <i class="fas fa-bars"></i>
 
             </button>
-            <button id="en-btn">EN</button>
+            @*<button id="en-btn">EN</button>
             <button id="ru-btn">RU</button>
-            <button id="kz-btn">KZ</button>
+            <button id="kz-btn">KZ</button>*@
+            <ul class="navbar-nav flex-grow-1">
+                <li class="nav-item">
+                    <a asp-controller="Home" asp-action="ChangeLanguage" asp-route-culture="en-US" class="nav-link text-dark">EN</a>
+                </li>
+                <li class="nav-item">
+                    <a asp-controller="Home" asp-action="ChangeLanguage" asp-route-culture="ru-RU" class="nav-link text-dark">RU</a>
+                </li>
+            </ul>
         </div>
 
 
@@ -144,13 +153,13 @@
           -->
 
         <div class="links">
-            <a href="#home">home</a>
-            <a href="#about">about</a>
-            <a href="#menu">menu</a>
-            <a href="#products">products</a>
-            <a href="#review">review</a>
-            <a href="#contact">contact</a>
-            <a href="#blog">blog</a>
+            <a id="greeting" class="@attributeValue0" asp-area="" asp-controller="Home" asp-action="Index">home</a>
+            <a id="about" class="@attributeValue1" asp-area="" asp-controller="Home" asp-action="About">About Us</a>
+            <a id="menu" class="@attributeValue2" asp-area="" asp-controller="Home" asp-action="Menu">menu</a>
+            <!---   <a id="Products" class="@attributeValue3" asp-area="" asp-controller="Home" asp-action="Products">products</a>-->
+            <a id="Review" class="@attributeValue4" asp-area="" asp-controller="Home" asp-action="Review">review</a>
+            <a id="contact" class="@attributeValue5" asp-area="" asp-controller="Home" asp-action="Contact">contact</a>
+            <a id="blog" class="@attributeValue6" asp-area="" asp-controller="Home" asp-action="Blog">blog</a>
         </div>
 
 
