@@ -30,12 +30,13 @@ namespace SliceDelivery.DAL
             if (!optionsBuilder.IsConfigured)
             {
                 optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=Diploma;Username=postgres;Password=mercy07");
+
             }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.HasAnnotation("Relational:Collation", "Kazakh_Kazakhstan.utf8");
+            modelBuilder.HasAnnotation("Relational:Collation", "Russian_Russia.1251");
 
             modelBuilder.Entity<Basket>(entity =>
             {

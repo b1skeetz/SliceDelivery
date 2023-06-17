@@ -9,4 +9,8 @@
 ./SliceDelivery.DAL/obj/
 ./SliceDelivery.Domain/obj/
 ./SliceDelivery.Service/obj/
+<<<<<<< HEAD
 ./SliceDelivery/obj/
+=======
+./SliceDelivery/obj/
+>>>>>>> 8a502ef3e01dc6163eb750ba8bb130fdfa4071e0

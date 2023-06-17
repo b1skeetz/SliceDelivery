@@ -8,7 +8,7 @@
     <title>Страница входа</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <style>
-        body {
+            body {
             font-family: Arial, sans-serif;
             background-color: #F0B559;
             margin: 0;
@@ -19,7 +19,8 @@
             max-width: 400px;
             margin: 100px auto;
             margin-bottom: 200px;
-            padding: 20px;
+            padding: 60px;
+            min-height: 481px;
             background-color: #fff;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -42,9 +43,11 @@
         input[type="text"],
         input[type="password"] {
             width: 100%;
-            padding: 10px;
+            padding: 15px 10px;
             border-radius: 5px;
+            height: 40px;
             border: 1px solid #ccc;
+            font-size: 14px;
         }
 
         button {
@@ -61,7 +64,14 @@
             button:hover {
                 background-color: #F0B559;
             }
-
+            .btn-success{
+                width: 100%;
+            }
+             ul, li{
+            font-size: 12px;
+            text-align: left;
+            margin-left: 5px;
+        }
 
         /* Анимация */
 
@@ -78,14 +88,15 @@
             </div>
             <div class="form-group">
                 <input autocomplete="new-password" asp-for="Password" placeholder="Пароль" class="form-control textbox-dg font-weight-bold text-center" type="password">
+                  <span class="text-black" style="font-size: small; font-family:'Comic Sans MS'">Пароль должен быть длиной больше 6 символов и иметь только латинские символы</span>
             </div>
-            <span class="text-black" style="font-size: small; font-family:'Comic Sans MS'">Пароль должен быть длиной больше 6 символов и иметь только латинские символы</span>
+          
             <div class="form-group">
                 <input autocomplete="new-password" asp-for="PasswordConfirm" placeholder="Подтвердите пароль" class="form-control textbox-dg font-weight-bold text-center" type="password">
             </div>
-            <div>
-                <h2 class="paragraphHome text-center"><a asp-controller="Home" target="_blank" asp-action="Login" style="color:deepskyblue;">Вход</a></h2>
-            </div>
+           <!-- <div>
+            <h2 class="paragraphHome text-center"><a asp-controller="Home" target="_blank" asp-action="Login" style="color:deepskyblue;">Вход</a></h2>
+            </div>-->
             <button class="btn btn-success btn-lg float-right" type="submit">Отправить</button>
         </form>
     </div>
