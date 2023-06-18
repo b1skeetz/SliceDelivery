@@ -1,13 +1,18 @@
 ﻿@model List<SliceDelivery.Domain.ViewModels.Order.OrderViewModel>
 @{
-    ViewData["Title"] = "Privacy Policy";
+    ViewData["Title"] = @language.GetKey("cart");
 }
 
-
+@using SliceDelivery.Controllers
+@inject LanguageService language
 <head>
-  <title>Корзина</title>
+    <title>@language.GetKey("cart")</title>
   <link rel="stylesheet" type="text/css" href="css.css">
    <style>
+       .row{
+           width: 1643px;
+           margin: 0 auto;
+       }
         .container{
             margin-top: 90px;
             margin-bottom: 250px;
@@ -64,6 +69,16 @@
             background-color: #45a049;
         }
 
+        .empty{
+            font-size: 36px;
+            color: #fff;
+            margin: 0 auto;
+            text-align:center;
+            margin-top: 250px;
+            margin-bottom: 290px;
+        }
+
+
     </style>
 </head>
 
@@ -85,85 +100,42 @@
 }
 @if (Model == null || Model.Count == 0)
 {
-    <div style="padding:40px;"></div>
-    <div class="card col-md-12">
-        <div class="row g-0">
-            <div class="col-md-12">
-                <div class="card-body">
-                    <h5 class="card-title text-center">Список заказов пуст :(</h5>
-                </div>
-            </div>
-        </div>
-    </div>
+    <p class="empty">@language.GetKey("cartEmpty")</p>
 }
 else
 {
-    <div class="row">
-        @foreach (var item in Model)
-        {
-            <div class="row row-cols-1 @cardStyle text-center">
-                <div class="col" style="padding: 10px;">
-                    <div class="card">
-                        <img src="@item?.Image"
-                             class="img-fluid rounded-start rounded">
-                        <div class="card-body">
-                            <h5 class="card-title">Название Продукта: @item.ProductName</h5>
-                            <p class="card-text">Тип: @item.ProductType</p>
-                            <p class="card-text">Цена: @item.CurrentPrice</p>
-                        </div>
-                        <div class="card-body">
-                             <a asp-controller="Home" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Удалить</a>
-                        </div>
-                    </div>
+    
+       
+
+
+            <div class="superBody">
+                <div class="container">
+                    <h1>Корзина</h1>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Фото</th>
+                                <th>@language.GetKey("cartName")</th>
+                                <th>@language.GetKey("cartType")</th>
+                                <th>@language.GetKey("cartPrice")</th>
+                                <th>-</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                    @foreach (var item in Model)
+                    {
+                            <tr>
+                                <td><img src="@item?.Image" alt="Фото продукта"></td>
+                                <td> @item.ProductName</td>
+                                <td> @item.ProductType</td>
+                                <td> @item.CurrentPrice</td>
+                                <td> <a asp-controller="Home" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">@language.GetKey("cartDel")</a> </td>
+                            </tr>
+                    }
+                        </tbody>
+                    </table>
+
                 </div>
             </div>
-        }
-    </div>   
 }
-@*
-<div class="superBody">
-  <div class="container">
-  <h1>Корзина</h1>
-
-    <table>
-        <thead>
-            <tr>
-                <th>Фото</th>
-                <th>Название</th>
-                <th>Цена</th>
-                <th>Количество</th>
-                <th>Общая цена</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><img src="path/to/image.jpg" alt="Фото продукта"></td>
-                <td>Продукт 1</td>
-                <td>100</td>
-                <td>2</td>
-                <td>200</td>
-            </tr>
-            <tr>
-                <td><img src="path/to/image.jpg" alt="Фото продукта"></td>
-                <td>Продукт 2</td>
-                <td>150</td>
-                <td>1</td>
-                <td>150</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <div class="cartBot">
-
-        <div class="total-price">
-            Общая цена: 350
-        </div>
-        
-
-
-        <a class="order-btn" href="#">Заказать</a>
-    </div>
-
-  </div>
-</div>
-*@

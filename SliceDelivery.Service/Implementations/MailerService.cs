@@ -35,7 +35,7 @@ namespace SliceDelivery.Service.Implementations
 
                 return new BaseResponse<Mailers>()
                 {
-                    Description = "Заявка создана успешно! Скоро с Вами свяжутся.",
+                    Description = "Заявка создана успешно! Скоро с Вами свяжутся.\n Application created successfully! You will be contacted soon.\n Қолданба сәтті жасалды! Сізге жақын арада хабарласады.",
                     StatusCode = StatusCode.OK
                 };
             }

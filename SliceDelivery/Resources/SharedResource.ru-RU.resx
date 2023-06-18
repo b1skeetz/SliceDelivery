@@ -120,10 +120,244 @@
   <data name="aboutUs" xml:space="preserve">
     <value>О нас</value>
   </data>
+  <data name="acountData" xml:space="preserve">
+    <value>Данные аккаунта</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>Адрес</value>
+  </data>
+  <data name="addressValid" xml:space="preserve">
+    <value>Длина адреса должна быть от 5 до 200 символов.</value>
+  </data>
+  <data name="addToCart" xml:space="preserve">
+    <value>Добавить в корзину</value>
+  </data>
+  <data name="adr" xml:space="preserve">
+    <value>Адрес:</value>
+  </data>
+  <data name="age" xml:space="preserve">
+    <value>Возраст</value>
+  </data>
+  <data name="ageValid" xml:space="preserve">
+    <value>Возраст должен быть указан от 0 до 150 лет.</value>
+  </data>
+  <data name="blog" xml:space="preserve">
+    <value>Блог</value>
+  </data>
+  <data name="blogFirDate" xml:space="preserve">
+    <value>автор: админ / 10 мая 2020 г.</value>
+  </data>
+  <data name="blogFirName" xml:space="preserve">
+    <value>Как приготовить бургеры</value>
+  </data>
+  <data name="blogFirText" xml:space="preserve">
+    <value>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus eos esse nesciunt cupiditate expedita.</value>
+  </data>
+  <data name="blogSecDate" xml:space="preserve">
+    <value>автор: админ / 10 мая 2020 г.</value>
+  </data>
+  <data name="blogSecName" xml:space="preserve">
+    <value>Как приготовить бургеры</value>
+  </data>
+  <data name="blogSecText" xml:space="preserve">
+    <value>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus eos esse nesciunt cupiditate expedita.</value>
+  </data>
+  <data name="blogThirDate" xml:space="preserve">
+    <value>автор: админ / 10 мая 2020 г.</value>
+  </data>
+  <data name="blogThirName" xml:space="preserve">
+    <value>Как приготовить бургеры</value>
+  </data>
+  <data name="blogThirText" xml:space="preserve">
+    <value>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus eos esse nesciunt cupiditate expedita.</value>
+  </data>
+  <data name="cart" xml:space="preserve">
+    <value>Корзина</value>
+  </data>
+  <data name="cartDel" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="cartEmpty" xml:space="preserve">
+    <value>Список заказов пуст :(</value>
+  </data>
+  <data name="cartName" xml:space="preserve">
+    <value>Название продукта:</value>
+  </data>
+  <data name="cartPrice" xml:space="preserve">
+    <value>Цена:</value>
+  </data>
+  <data name="cartType" xml:space="preserve">
+    <value>Тип:</value>
+  </data>
+  <data name="contact" xml:space="preserve">
+    <value>Контакты</value>
+  </data>
+  <data name="contactNow" xml:space="preserve">
+    <value>Связаться сейчас</value>
+  </data>
+  <data name="contactUs" xml:space="preserve">
+    <value>Свяжитесь с нами</value>
+  </data>
+  <data name="count" xml:space="preserve">
+    <value>Количество</value>
+  </data>
+  <data name="creatForm" xml:space="preserve">
+    <value>Форма создания заказа</value>
+  </data>
+  <data name="customRev" xml:space="preserve">
+    <value>Отзыв клиента</value>
+  </data>
+  <data name="db" xml:space="preserve">
+    <value>Дата создания:</value>
+  </data>
+  <data name="desc" xml:space="preserve">
+    <value>Описание</value>
+  </data>
+  <data name="email" xml:space="preserve">
+    <value>Электронная почта</value>
+  </data>
+  <data name="error" xml:space="preserve">
+    <value>Ошибка проверки | Заполните все поля</value>
+  </data>
+  <data name="fio" xml:space="preserve">
+    <value>Полное имя:</value>
+  </data>
+  <data name="firstName" xml:space="preserve">
+    <value>Имя</value>
+  </data>
+  <data name="getInTouch" xml:space="preserve">
+    <value>Свяжитесь с нами</value>
+  </data>
   <data name="home" xml:space="preserve">
     <value>Главная</value>
   </data>
+  <data name="info" xml:space="preserve">
+    <value>Информация</value>
+  </data>
+  <data name="lastName" xml:space="preserve">
+    <value>Отчество</value>
+  </data>
+  <data name="leader" xml:space="preserve">
+    <value>Узнать больше</value>
+  </data>
+  <data name="login" xml:space="preserve">
+    <value>Войти</value>
+  </data>
+  <data name="loginAc" xml:space="preserve">
+    <value>Логин</value>
+  </data>
+  <data name="loginAcValid" xml:space="preserve">
+    <value>Длина логина должна быть от 3 до 20 символов.</value>
+  </data>
   <data name="menu" xml:space="preserve">
     <value>Меню</value>
+  </data>
+  <data name="name" xml:space="preserve">
+    <value>Имя</value>
+  </data>
+  <data name="newPass" xml:space="preserve">
+    <value>Новый пароль</value>
+  </data>
+  <data name="number" xml:space="preserve">
+    <value>Номер</value>
+  </data>
+  <data name="ok" xml:space="preserve">
+    <value>ОК</value>
+  </data>
+  <data name="on" xml:space="preserve">
+    <value>заказать сейчас</value>
+  </data>
+  <data name="ourBlog" xml:space="preserve">
+    <value>Наш блог</value>
+  </data>
+  <data name="ourMenu" xml:space="preserve">
+    <value>Наше Меню</value>
+  </data>
+  <data name="out" xml:space="preserve">
+    <value>Выход</value>
+  </data>
+  <data name="pass" xml:space="preserve">
+    <value>Пароль</value>
+  </data>
+  <data name="passValid" xml:space="preserve">
+    <value>Пароль должен содержать не менее 6 символов и состоять только из латинских букв.</value>
+  </data>
+  <data name="produ" xml:space="preserve">
+    <value>Продукт:</value>
+  </data>
+  <data name="productName" xml:space="preserve">
+    <value>Название продукта</value>
+  </data>
+  <data name="profile" xml:space="preserve">
+    <value>Профиль</value>
+  </data>
+  <data name="readMore" xml:space="preserve">
+    <value>Читать далее</value>
+  </data>
+  <data name="reg" xml:space="preserve">
+    <value>Регистрация</value>
+  </data>
+  <data name="registration" xml:space="preserve">
+    <value>Зарегистрироваться</value>
+  </data>
+  <data name="repeatPass" xml:space="preserve">
+    <value>Повторите пароль</value>
+  </data>
+  <data name="rev" xml:space="preserve">
+    <value>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia officia id et, corrupti assumenda.</value>
+  </data>
+  <data name="rev1" xml:space="preserve">
+    <value>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia officia id et, corrupti assumenda.</value>
+  </data>
+  <data name="rev2" xml:space="preserve">
+    <value>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia officia id et, corrupti assumenda.</value>
+  </data>
+  <data name="revFirst" xml:space="preserve">
+    <value>В целом, прекрасное место! Вкусная еда, отличный сервис. Очень доволен всем.</value>
+  </data>
+  <data name="review" xml:space="preserve">
+    <value>Отзывы</value>
+  </data>
+  <data name="revNameFirst" xml:space="preserve">
+    <value>Патрик Хеллингер</value>
+  </data>
+  <data name="revNameSec" xml:space="preserve">
+    <value>Серена Уильямс</value>
+  </data>
+  <data name="revNamethir" xml:space="preserve">
+    <value>Хелен Марксен</value>
+  </data>
+  <data name="revSec" xml:space="preserve">
+    <value>Прекрасное место для отдыха. Очень вкусная еда и приветливый персонал.</value>
+  </data>
+  <data name="revThir" xml:space="preserve">
+    <value>Я всегда рада посещать это место. Всегда вкусная еда и отличный выбор.</value>
+  </data>
+  <data name="save" xml:space="preserve">
+    <value>Сохранить</value>
+  </data>
+  <data name="search" xml:space="preserve">
+    <value>Поиск</value>
+  </data>
+  <data name="secondName" xml:space="preserve">
+    <value>Фамилия</value>
+  </data>
+  <data name="secret" xml:space="preserve">
+    <value>В чем секрет рецепта наших бургеров</value>
+  </data>
+  <data name="send" xml:space="preserve">
+    <value>Отправить</value>
+  </data>
+  <data name="signIn" xml:space="preserve">
+    <value>Войти</value>
+  </data>
+  <data name="typ" xml:space="preserve">
+    <value>Тип:</value>
+  </data>
+  <data name="welc1" xml:space="preserve">
+    <value>на наш сайт заказа еды! Здесь вы можете просмотреть широкий выбор вкусных блюд и легко сделать заказ. Наша удобная платформа позволяет легко настроить питание и выбрать один из множества вариантов оплаты.</value>
+  </data>
+  <data name="welcome" xml:space="preserve">
+    <value>Добро Пожаловать</value>
   </data>
 </root>

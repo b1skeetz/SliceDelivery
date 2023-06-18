@@ -2,7 +2,8 @@
 @{
     ViewData["Title"] = "GetItem";
 }
-
+@using SliceDelivery.Controllers
+@inject LanguageService language
 
 <div class="row">
     <div class="col-md-12">
@@ -11,17 +12,17 @@
     </div>
     <div class="col-md-6">
         <ul class="list-group list-group-flush">
-            <li class="list-group-item">Товар: @Model.ProductName</li>
-            <li class="list-group-item">Тип: @Model.ProductType</li>
-            <li class="list-group-item">Описание: @Model.Description</li>
-            <li class="list-group-item">Цена: @Model.CurrentPrice</li>
+            <li class="list-group-item">@language.GetKey("product") @Model.ProductName</li>
+            <li class="list-group-item">@language.GetKey("typ") @Model.ProductType</li>
+            <li class="list-group-item">@language.GetKey("desc") @Model.Description</li>
+            <li class="list-group-item">@language.GetKey("price") @Model.CurrentPrice</li>
         </ul>
     </div>
     <div class="col-md-6">
         <ul class="list-group list-group-flush">
-           <li class="list-group-item">ФИО: @Model.FirstName @Model.LastName.Substring(0, 1) @Model.MiddleName.Substring(0, 1)</li>
-            <li class="list-group-item">Адрес: @Model.Address</li>
-            <li class="list-group-item">Дата создания: @Model.DateCreate</li>
+            <li class="list-group-item">@language.GetKey("fio") @Model.FirstName @Model.LastName.Substring(0, 1) @Model.MiddleName.Substring(0, 1)</li>
+            <li class="list-group-item">@language.GetKey("adr") @Model.Address</li>
+            <li class="list-group-item">@language.GetKey("db") @Model.DateCreate</li>
        </ul> 
     </div>
 </div>

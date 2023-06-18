@@ -118,190 +118,187 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="aboutUs" xml:space="preserve">
-    <value>About us</value>
+    <value>Біз туралы</value>
   </data>
   <data name="acountData" xml:space="preserve">
-    <value>Account details</value>
+    <value>Аккаунт деректері</value>
   </data>
   <data name="Address" xml:space="preserve">
-    <value>Address</value>
+    <value>Мекенжайы</value>
   </data>
   <data name="addressValid" xml:space="preserve">
-    <value>The length of the address must be between 5 and 200 characters.</value>
+    <value>Мекенжайының ұзындығы 5-ден 200 символға дейін болуы керек.</value>
   </data>
   <data name="addToCart" xml:space="preserve">
-    <value>Add to cart</value>
+    <value>Себетке қосу</value>
   </data>
   <data name="adr" xml:space="preserve">
-    <value>Address:</value>
+    <value>Мекенжай:</value>
   </data>
   <data name="age" xml:space="preserve">
-    <value>Age</value>
+    <value>Жасы</value>
   </data>
   <data name="ageValid" xml:space="preserve">
-    <value>Age must be specified from 0 to 150 years.</value>
+    <value>Жас 0-дан 150 жылға дейін көрсетілуі керек.</value>
   </data>
   <data name="blog" xml:space="preserve">
-    <value>Blog</value>
+    <value>Блог</value>
   </data>
   <data name="blogFirDate" xml:space="preserve">
-    <value>by admin / 10st may, 2020</value>
+    <value>автор: админ / 10 мамыр 2020 ж.</value>
   </data>
   <data name="blogFirName" xml:space="preserve">
-    <value>how to make burgers</value>
+    <value>Қағазанды бургерлерді қалай жасау керек</value>
   </data>
   <data name="blogFirText" xml:space="preserve">
     <value>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus eos esse nesciunt cupiditate expedita.</value>
   </data>
   <data name="blogSecDate" xml:space="preserve">
-    <value>by admin / 10st may, 2020</value>
+    <value>автор: админ / 10 мамыр 2020 ж.</value>
   </data>
   <data name="blogSecName" xml:space="preserve">
-    <value>how to make burgers</value>
+    <value>Қағазанды бургерлерді қалай жасау керек</value>
   </data>
   <data name="blogSecText" xml:space="preserve">
     <value>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus eos esse nesciunt cupiditate expedita.</value>
   </data>
   <data name="blogThirDate" xml:space="preserve">
-    <value>by admin / 10st may, 2020</value>
+    <value>автор: админ / 10 мамыр 2020 ж.</value>
   </data>
   <data name="blogThirName" xml:space="preserve">
-    <value>how to make burgers</value>
+    <value>Қағазанды бургерлерді қалай жасау керек</value>
   </data>
   <data name="blogThirText" xml:space="preserve">
     <value>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus eos esse nesciunt cupiditate expedita.</value>
   </data>
   <data name="cart" xml:space="preserve">
-    <value>Cart</value>
+    <value>Себет</value>
   </data>
   <data name="cartDel" xml:space="preserve">
-    <value>Delete</value>
+    <value>Жою</value>
   </data>
   <data name="cartEmpty" xml:space="preserve">
-    <value>Order list is empty :(</value>
+    <value>Тапсырыс тізімі бос :(</value>
   </data>
   <data name="cartName" xml:space="preserve">
-    <value>The product's name:</value>
+    <value>Тауарның аты:</value>
   </data>
   <data name="cartPrice" xml:space="preserve">
-    <value>Price:</value>
+    <value>Бағасы:</value>
   </data>
   <data name="cartType" xml:space="preserve">
-    <value>Type:</value>
+    <value>Түрі:</value>
   </data>
   <data name="contact" xml:space="preserve">
-    <value>Contacts</value>
+    <value>Байланысу</value>
   </data>
   <data name="contactNow" xml:space="preserve">
-    <value>contact now</value>
+    <value>Қазір байланысу</value>
   </data>
   <data name="contactUs" xml:space="preserve">
-    <value>Contact us</value>
+    <value>Бізбен байланысыңыз</value>
   </data>
   <data name="count" xml:space="preserve">
-    <value>Count</value>
+    <value>Саны</value>
   </data>
   <data name="creatForm" xml:space="preserve">
-    <value>Order creation form</value>
+    <value>Тапсырысты жасау формасы</value>
   </data>
   <data name="customRev" xml:space="preserve">
-    <value>customer's review</value>
+    <value>Мүштерінің пікірі</value>
   </data>
   <data name="db" xml:space="preserve">
-    <value>Date of creation:</value>
+    <value>Жасау күні:</value>
   </data>
   <data name="desc" xml:space="preserve">
-    <value>Description</value>
-  </data>
-  <data name="email" xml:space="preserve">
-    <value>email</value>
+    <value>Сипаттама</value>
   </data>
   <data name="error" xml:space="preserve">
-    <value>Validation error | Fill in all the fields</value>
+    <value>Тексеру қатесі | Барлық жолдарды толтырыңыз</value>
   </data>
   <data name="fio" xml:space="preserve">
-    <value>Full Name:</value>
+    <value>Толық аты:</value>
   </data>
   <data name="firstName" xml:space="preserve">
-    <value>First Name</value>
+    <value>Аты</value>
   </data>
   <data name="getInTouch" xml:space="preserve">
-    <value>get in touch</value>
+    <value>Байланысу</value>
   </data>
   <data name="home" xml:space="preserve">
-    <value>Home</value>
+    <value>Басты бет</value>
   </data>
   <data name="info" xml:space="preserve">
-    <value>Information</value>
+    <value>Ақпарат</value>
   </data>
   <data name="lastName" xml:space="preserve">
-    <value>Last Name</value>
+    <value>Әкесінің аты</value>
   </data>
   <data name="leader" xml:space="preserve">
-    <value>Learn More</value>
+    <value>Толығырақ ақпарат алу</value>
   </data>
   <data name="login" xml:space="preserve">
-    <value>Sign In</value>
+    <value>Кіру</value>
   </data>
   <data name="loginAc" xml:space="preserve">
-    <value>Login</value>
+    <value>Логин</value>
   </data>
   <data name="loginAcValid" xml:space="preserve">
-    <value>Login length must be from 3 to 20 characters.</value>
+    <value>Логиндің ұзындығы 3-ден 20 символға дейін болуы керек.</value>
   </data>
   <data name="menu" xml:space="preserve">
-    <value>Menu</value>
+    <value>Мәзір</value>
   </data>
   <data name="name" xml:space="preserve">
-    <value>name</value>
+    <value>Аты</value>
   </data>
   <data name="newPass" xml:space="preserve">
-    <value>New Password</value>
+    <value>Жаңа құпия сөз</value>
   </data>
   <data name="number" xml:space="preserve">
-    <value>number</value>
+    <value>Нөмір</value>
   </data>
   <data name="ok" xml:space="preserve">
-    <value>ok</value>
+    <value>OK</value>
   </data>
   <data name="on" xml:space="preserve">
-    <value>order now</value>
+    <value>Қазір тапсырыс беріңіз</value>
   </data>
   <data name="ourBlog" xml:space="preserve">
-    <value>Our Blog</value>
+    <value>Біздің блог</value>
   </data>
   <data name="ourMenu" xml:space="preserve">
-    <value>Our Menu</value>
+    <value>Біздің Мәзір</value>
   </data>
   <data name="out" xml:space="preserve">
-    <value>Out</value>
+    <value>Шығу</value>
   </data>
   <data name="pass" xml:space="preserve">
-    <value>Password</value>
+    <value>Құпия сөз</value>
   </data>
   <data name="passValid" xml:space="preserve">
-    <value>Password must be more than 6 characters long and contain only Latin characters</value>
+    <value>Құпия сөз 6 символдан көп болуы және тек латын әліпбиінен тұруы керек.</value>
   </data>
   <data name="produ" xml:space="preserve">
-    <value>Product:</value>
+    <value>Тауар:</value>
   </data>
   <data name="productName" xml:space="preserve">
-    <value>Product Name</value>
+    <value>Тауарның аты</value>
   </data>
   <data name="profile" xml:space="preserve">
-    <value>Profile</value>
+    <value>Профиль</value>
   </data>
   <data name="readMore" xml:space="preserve">
-    <value>read more</value>
+    <value>Толығырақ оқу</value>
   </data>
   <data name="reg" xml:space="preserve">
-    <value>Registration</value>
+    <value>Тіркелу</value>
   </data>
   <data name="registration" xml:space="preserve">
-    <value>Sign Up</value>
+    <value>Тіркелу</value>
   </data>
   <data name="repeatPass" xml:space="preserve">
-    <value>Repeat Password</value>
+    <value>Құпия сөзді қайталау</value>
   </data>
   <data name="rev" xml:space="preserve">
     <value>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia officia id et, corrupti assumenda.</value>
@@ -313,51 +310,51 @@
     <value>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia officia id et, corrupti assumenda.</value>
   </data>
   <data name="revFirst" xml:space="preserve">
-    <value>Dicta Totam Suscipit Vero Praesentium Excepturi Facilis, Fuga At Architecto Dolor Tempora Molestias Quam Dignissimos Sit. Molestiae Temporibus Ratione Quas Placeat Possimus!</value>
+    <value>Жалпыда өте жақсы орын! Лақтырып алу, қызықты сервис. Барлығынан өте көңілдімін.</value>
   </data>
   <data name="review" xml:space="preserve">
-    <value>Reviews</value>
+    <value>Пікірлер</value>
   </data>
   <data name="revNameFirst" xml:space="preserve">
-    <value>Patrick Hellinger</value>
+    <value>Патрик Хеллингер</value>
   </data>
   <data name="revNameSec" xml:space="preserve">
-    <value>Serena Williams</value>
+    <value>Серена Уильямс</value>
   </data>
   <data name="revNamethir" xml:space="preserve">
-    <value>Helen Marksen</value>
+    <value>Хелен Марксен</value>
   </data>
   <data name="revSec" xml:space="preserve">
-    <value>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga at architecto dolor tempora molestias quam dignissimos sit. Molestiae temporibus ratione quas placeat possimus!</value>
+    <value>Демалысқа өте жақсы орын. Өте лақтырып алу және қош келдіңіздер деп жатамыз.</value>
   </data>
   <data name="revThir" xml:space="preserve">
-    <value>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta totam suscipit vero praesentium excepturi facilis, fuga at architecto dolor tempora molestias quam dignissimos possimus!</value>
+    <value>Мен әрқашан осы орында болуға сенімдімін. Өте лақтырып алу және отшайтыны бар.</value>
   </data>
   <data name="save" xml:space="preserve">
-    <value>Save</value>
+    <value>Сақтау</value>
   </data>
   <data name="search" xml:space="preserve">
-    <value>Search</value>
+    <value>Іздеу</value>
   </data>
   <data name="secondName" xml:space="preserve">
-    <value>Second Name</value>
+    <value>Тегі</value>
   </data>
   <data name="secret" xml:space="preserve">
-    <value>What is the secret receipe of our burgers</value>
+    <value>Бүргерлеріміздің сыртқы рецепті неді?</value>
   </data>
   <data name="send" xml:space="preserve">
-    <value>Send</value>
+    <value>Жіберу</value>
   </data>
   <data name="signIn" xml:space="preserve">
-    <value>Sign In</value>
+    <value>Кіру</value>
   </data>
   <data name="typ" xml:space="preserve">
-    <value>Type:</value>
+    <value>Түр:</value>
   </data>
   <data name="welc1" xml:space="preserve">
-    <value>to our food ordering website! Here you can browse a wide selection of delicious dishes and place your order with ease. Our user-friendly platform makes it simple to customize your meal and choose from a variety of payment options</value>
+    <value>бетімізге! Мысырған тағамдарды көре аласыз және оларды еңгізу үлкен тізімдегі біреуін таңдау ыңғайлы болатын</value>
   </data>
   <data name="welcome" xml:space="preserve">
-    <value>welcome</value>
+    <value>Қош келдіңіз</value>
   </data>
 </root>

@@ -18,20 +18,7 @@ namespace SliceDelivery.DAL.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 63)
                 .HasAnnotation("ProductVersion", "5.0.17")
                 .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
-            modelBuilder.Entity("SliceDelivery.Domain.Models.Mailer", b =>
-            {
-                b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint")
-                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
-                b.Property<string>("Name")
-                        .HasColumnType("text");
-                b.Property<string>("Email")
-                        .HasColumnType("text");
-                b.Property<string>("Number")
-                        .HasColumnType("text");
 
-            });
             modelBuilder.Entity("SliceDelivery.Domain.Models.Basket", b =>
                 {
                     b.Property<long>("Id")
@@ -50,6 +37,27 @@ namespace SliceDelivery.DAL.Migrations
                     b.ToTable("Baskets");
                 });
 
+            modelBuilder.Entity("SliceDelivery.Domain.Models.Mailers", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+
+                    b.Property<string>("Email")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Number")
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Mailers");
+                });
+
             modelBuilder.Entity("SliceDelivery.Domain.Models.Order", b =>
                 {
                     b.Property<long>("Id")
@@ -63,9 +71,6 @@ namespace SliceDelivery.DAL.Migrations
                     b.Property<long?>("BasketId")
                         .HasColumnType("bigint");
 
-                    b.Property<long?>("ProductId")
-                        .HasColumnType("bigint");
-
                     b.Property<DateTime>("DateCreated")
                         .HasColumnType("timestamp without time zone");
 
@@ -77,6 +82,9 @@ namespace SliceDelivery.DAL.Migrations
 
                     b.Property<string>("MiddleName")
                         .HasColumnType("text");
+
+                    b.Property<long?>("ProductId")
+                        .HasColumnType("bigint");
 
                     b.HasKey("Id");
 

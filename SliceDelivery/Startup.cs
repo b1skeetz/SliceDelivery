@@ -78,6 +78,7 @@ namespace SliceDelivery
                 {
                         new CultureInfo("en-US"),
                         new CultureInfo("ru-RU"),
+                        new CultureInfo("kk-KZ")
                 };
                 options.DefaultRequestCulture = new RequestCulture(culture: "en-US", uiCulture: "en-US");
                 options.SupportedCultures = supportedCultures;

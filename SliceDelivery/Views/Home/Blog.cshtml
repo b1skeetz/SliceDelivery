@@ -1,20 +1,21 @@
 ﻿@{
     ViewData["Title"] = "Privacy Policy";
 }
-
+@using SliceDelivery.Controllers
+@inject LanguageService language
 
  <section class="blog" id="blog">
-    <h1 class="heading">our <span>blog</span> </h1>
+    <h1 class="heading">@language.GetKey("ourBlog") </h1>
     <div class="box-container">
         <div class="box-full">
             <div class="image">
                 <img src="~/images/delicious-burger-on-wooden-board-2022-03-04-05-58-25-utc.jpg" alt="">
             </div>
             <div class="content">
-                <a href="#" class="title">how to make burgers</a>
-                <span>by admin / 10st may, 2020</span>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus eos esse nesciunt cupiditate expedita.</p>
-                <a href="#" class="btn">read more</a>
+                <a href="#" class="title">@language.GetKey("blogFirName")</a>
+                <span>@language.GetKey("blogFirDate")</span>
+                <p>@language.GetKey("blogFirText")</p>
+                <a href="#" class="btn">@language.GetKey("readMore")</a>
             </div>
         </div>
         <div class="box-full">
@@ -22,10 +23,10 @@
                 <img src="~/images/delicious-tasty-burgers-on-wooden-background-2021-08-26-15-25-13-utc.jpg" alt="">
             </div>
             <div class="content">
-                <a href="#" class="title">how to make burgers</a>
-                <span>by admin / 10st may, 2020</span>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus eos esse nesciunt cupiditate expedita.</p>
-                <a href="#" class="btn">read more</a>
+                <a href="#" class="title">@language.GetKey("blogSecName")</a>
+                <span>@language.GetKey("blogSecDate")</span>
+                <p>@language.GetKey("blogSecText")</p>
+                <a href="#" class="btn">@language.GetKey("readMore")</a>
             </div>
         </div>
         <div class="box-full">
@@ -33,10 +34,10 @@
                 <img src="~/images/handmade-burger-on-dark-background-delicious-blac-2021-10-21-02-27-27-utc.jpg" alt="">
             </div>
             <div class="content">
-                <a href="#" class="title">how to make burgers</a>
-                <span>by admin / 10st may, 2020</span>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus eos esse nesciunt cupiditate expedita.</p>
-                <a href="#" class="btn">read more</a>
+                 <a href="#" class="title">@language.GetKey("blogThirName")</a>
+                <span>@language.GetKey("blogThirDate")</span>
+                <p>@language.GetKey("blogThirText")</p>
+                <a href="#" class="btn">@language.GetKey("readMore")</a>
             </div>
         </div>
     </div>

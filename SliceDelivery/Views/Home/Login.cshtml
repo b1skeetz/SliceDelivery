@@ -2,7 +2,8 @@
 @{
     ViewData["Title"] = "Privacy Policy";
 }
-
+@using SliceDelivery.Controllers
+@inject LanguageService language
 
 <head>
     <title>Страница входа</title>
@@ -82,19 +83,18 @@
 </head>
 <body>
     <div class="container">
-        <h2>Вход</h2>
+        <h2>@language.GetKey("signIn")</h2>
         <form autocomplete="on" method="post" asp-controller="Home" asp-action="Login">
             <div asp-validation-summary="All" style="font-size:23px; font-family:Impact" class="text-danger text-center"></div>
             <div class="form-group">
-                <input asp-for="Name" placeholder="Логин" class="form-control textbox-dg font-weight-bold text-center" type="text">
-                <div class="form-text">Длина логина должна быть от 3 до 20 символов.</div>
+                <input asp-for="Name" placeholder="@language.GetKey("loginAc")" class="form-control textbox-dg font-weight-bold text-center" type="text">
+                <div class="form-text">@language.GetKey("loginAcValid")</div>
             </div>
             <div class="form-group">
-                <input autocomplete="new-password" asp-for="Password" placeholder="Пароль" class="form-control textbox-dg font-weight-bold text-center" type="password">
+                <input autocomplete="new-password" asp-for="Password" placeholder="@language.GetKey("pass")" class="form-control textbox-dg font-weight-bold text-center" type="password">
             </div>
             <div class="d-grid gap-2 d-md-block">
-                <a asp-controller="Home" asp-action="Register" class="btn btn-primary" type="button">Регистрация</a>
-                <button class="btn btn-success">Отправить</button>
+                <button class="btn btn-success">@language.GetKey("send")</button>
             </div>
         </form>
     </div>

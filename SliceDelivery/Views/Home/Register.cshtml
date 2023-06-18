@@ -1,8 +1,9 @@
 ﻿@model SliceDelivery.Domain.ViewModels.Account.RegisterViewModel
 @{
-    ViewData["Title"] = "Privacy Policy";
+    ViewData["Title"] = @language.GetKey("reg");
 }
-
+@using SliceDelivery.Controllers
+@inject LanguageService language
 
 <head>
     <title>Страница входа</title>
@@ -80,24 +81,24 @@
 </head>
 <body>
     <div class="container">
-        <h2>Регистрация</h2>
+        <h2>@language.GetKey("reg")</h2>
         <form asp-controller="Home" asp-action="Register">
             <div asp-validation-summary="All" style="font-size:23px; font-family:Impact" class="text-danger text-center"></div>
             <div class="form-group">
-                <input asp-for="Name" class="form-control textbox-dg font-weight-bold text-center" placeholder="Имя" type="text">
+                <input asp-for="Name" class="form-control textbox-dg font-weight-bold text-center" placeholder="@language.GetKey("loginAc")" type="text">
             </div>
             <div class="form-group">
-                <input autocomplete="new-password" asp-for="Password" placeholder="Пароль" class="form-control textbox-dg font-weight-bold text-center" type="password">
-                  <span class="text-black" style="font-size: small; font-family:'Comic Sans MS'">Пароль должен быть длиной больше 6 символов и иметь только латинские символы</span>
+                <input autocomplete="new-password" asp-for="Password" placeholder="@language.GetKey("pass")" class="form-control textbox-dg font-weight-bold text-center" type="password">
+                <span class="text-black" style="font-size: small; font-family:'Comic Sans MS'">@language.GetKey("passValid")</span>
             </div>
           
             <div class="form-group">
-                <input autocomplete="new-password" asp-for="PasswordConfirm" placeholder="Подтвердите пароль" class="form-control textbox-dg font-weight-bold text-center" type="password">
+                <input autocomplete="new-password" asp-for="PasswordConfirm" placeholder="@language.GetKey("repeatPass")" class="form-control textbox-dg font-weight-bold text-center" type="password">
             </div>
            <!-- <div>
             <h2 class="paragraphHome text-center"><a asp-controller="Home" target="_blank" asp-action="Login" style="color:deepskyblue;">Вход</a></h2>
             </div>-->
-            <button class="btn btn-success btn-lg float-right" type="submit">Отправить</button>
+            <button class="btn btn-success btn-lg float-right" type="submit">@language.GetKey("send")</button>
         </form>
     </div>
     <script src="script.js"></script>

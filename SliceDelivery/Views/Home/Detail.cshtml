@@ -1,6 +1,6 @@
 ﻿@model SliceDelivery.Domain.ViewModels.Profile.ProfileViewModel
 @{
-    ViewData["Title"] = "Privacy Policy";
+    ViewData["Title"] = @language.GetKey("profile");
     /*string family = "55";
     string name = "55";
     string address = "55";
@@ -8,7 +8,8 @@
     bool edit = false;*/
 }
 
-
+@using SliceDelivery.Controllers
+@inject LanguageService language
 <head>
     <title>Личный кабинет</title>
     <link rel="stylesheet" type="text/css" href="css.css">
@@ -135,19 +136,19 @@
                 <div class="card-body">
                     <form id="profileFormId" asp-controller="Home" asp-action="Save">
                         <input asp-for="Id" hidden="hidden" />
-                        <h5 class="card-title">Данные профиля</h5>
+                        <h5 class="card-title">@language.GetKey("profile")</h5>
                         <div class="mb-3">
-                            <label class="form-label text-black-50">Возраст</label>
+                            <label class="form-label text-black-50">@language.GetKey("age")</label>
                             <input type="text" class="form-control" asp-for="Age">
-                            <div class="form-text">Возраст должен быть указан от 0 до 150 лет.</div>
+                            <div class="form-text">@language.GetKey("ageValid")</div>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label text-black-50">Адрес</label>
+                            <label class="form-label text-black-50">@language.GetKey("Address")</label>
                             <textarea class="form-control" asp-for="Address" rows="3"></textarea>
-                            <div class="form-text">Длина адреса должна быть от 5 до 200 символов.</div>
+                            <div class="form-text">@language.GetKey("addressValid") </div>
                         </div>
                         <div class="card-buttons-group">
-                            <button class='btn btn-primary' id='saveProfileId'>Сохранить</button>
+                            <button class='btn btn-primary' id='saveProfileId'>@language.GetKey("save")</button>
                         </div>
                     </form>
                 </div>
@@ -157,18 +158,18 @@
             <div class="card">
                 <div class="card-body">
                     <form id="accountFormId" asp-controller="Home" asp-action="ChangePassword">
-                        <h5 class="card-title">Данные аккаунта</h5>
+                        <h5 class="card-title">@language.GetKey("acountData")</h5>
                         <div class="mb-3">
-                            <label class="form-label text-black-50">Логин</label>
+                            <label class="form-label text-black-50">@language.GetKey("loginAc")</label>
                             <input type="text" class="form-control" asp-for="UserName" disabled="disabled">
-                            <div class="form-text">Длина логина должна быть от 3 до 20 символов.</div>
+                            <div class="form-text">@language.GetKey("loginAcValid")</div>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label text-black-50">Новый пароль</label>
+                            <label class="form-label text-black-50">@language.GetKey("newPass")</label>
                             <input name="NewPassword" class="form-control textbox-dg font-weight-bold text-center" type="password">
                         </div>
                         <div class="card-buttons-group">
-                            <button class='btn btn-primary' id='saveAccountId'>Сохранить</button>
+                            <button class='btn btn-primary' id='saveAccountId'>@language.GetKey("save")</button>
                         </div>
                     </form>
                 </div>
@@ -176,27 +177,7 @@
         </div>
     </div>
     <br />
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="card text-center">
-                <div class="card-header">
-                    <ul class="nav nav-tabs card-header-tabs">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="@Url.Action("Index", "Home")">Главная</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="@Url.Action("Menu", "Home")">Меню</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">Special title treatment</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-        </div>
-    </div>
+   
 
     @section pageScripts
         {
@@ -210,18 +191,18 @@
                     data: data,
                     success: function(response) {
                         Swal.fire({
-                            title: 'Информация',
+                            title: '@language.GetKey("info")',
                             text: response.description,
                             icon: 'success',
-                            confirmButtonText: 'Окей'
+                            confirmButtonText: '@language.GetKey("ok")'
                         })
                     },
                     error: function(data) {
                         Swal.fire({
-                            title: 'Информация',
-                            text: 'Ошибка валидации',
+                            title: '@language.GetKey("info")',
+                            text: '@language.GetKey("error")',
                             icon: 'error',
-                            confirmButtonText: 'Окей'
+                            confirmButtonText: '@language.GetKey("ok")'
                         })
                     }
                 });
@@ -240,18 +221,18 @@
                     data: data,
                     success: function(response) {
                         Swal.fire({
-                            title: 'Информация',
+                            title: '@language.GetKey("info")',
                             text: response.description,
                             icon: 'success',
-                            confirmButtonText: 'Окей'
+                            confirmButtonText: '@language.GetKey("ok")'
                         })
                     },
                     error: function(response) {
                         Swal.fire({
-                            title: 'Информация',
+                            title: '@language.GetKey("info")',
                             text: response.responseJSON.errorMessage,
                             icon: 'error',
-                            confirmButtonText: 'Окей'
+                            confirmButtonText: '@language.GetKey("ok")'
                         })
                     }
                 });

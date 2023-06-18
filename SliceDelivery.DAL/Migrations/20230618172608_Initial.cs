@@ -16,7 +16,7 @@ namespace SliceDelivery.DAL.Migrations
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Name = table.Column<string>(type: "text", nullable: true),
                     Email = table.Column<string>(type: "text", nullable: true),
-                    Number = table.Column<string>(type: "text", nullable: true),
+                    Number = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -140,6 +140,9 @@ namespace SliceDelivery.DAL.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "Mailers");
+
             migrationBuilder.DropTable(
                 name: "Orders");
 

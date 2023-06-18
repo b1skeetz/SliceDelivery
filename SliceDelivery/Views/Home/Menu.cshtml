@@ -1,10 +1,11 @@
 ﻿@model IEnumerable<SliceDelivery.Domain.Models.Product>
 @{
-    ViewData["Title"] = "Privacy Policy";
+    ViewData["Title"] = @language.GetKey("ourMenu");
 }
-
+@using SliceDelivery.Controllers
+@inject LanguageService language
 <section class="menu" id="menu">
-    <h1 id="our" class="heading">our menu</h1>
+    <h1 id="our" class="heading">@language.GetKey("ourMenu")</h1>
     <div class="box-container">
         @foreach (var prod in Model)
         {
@@ -13,10 +14,10 @@
                     <span id="Pizza" class="menu-category">@prod.Category</span>
                     <h3 id="Mini_Pizzas">@prod.Name</h3>
                     <div class="price">$@prod.CurrentPrice<span>$@prod.OldPrice</span></div>
-                    <img src="@prod?.Avatar" alt="@prod.Name" />
+                    <img class="menuImg" src="@prod?.Avatar" alt="@prod.Name" />
                 </div>
                 <div class="box-bottom">
-                    <a asp-controller="Home" asp-action="CreateOrder" asp-route-id="@prod.Id" class="btn">Add to cart</a>
+                    <a asp-controller="Home" asp-action="CreateOrder" asp-route-id="@prod.Id" class="btn">@language.GetKey("addToCart")</a>
                 </div>
             </div>
         }

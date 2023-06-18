@@ -10,7 +10,7 @@ using SliceDelivery.DAL;
 namespace SliceDelivery.DAL.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20230615153218_Initial")]
+    [Migration("20230618172608_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -39,6 +39,27 @@ namespace SliceDelivery.DAL.Migrations
                     b.ToTable("Baskets");
                 });
 
+            modelBuilder.Entity("SliceDelivery.Domain.Models.Mailers", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+
+                    b.Property<string>("Email")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Number")
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Mailers");
+                });
+
             modelBuilder.Entity("SliceDelivery.Domain.Models.Order", b =>
                 {
                     b.Property<long>("Id")
@@ -52,9 +73,6 @@ namespace SliceDelivery.DAL.Migrations
                     b.Property<long?>("BasketId")
                         .HasColumnType("bigint");
 
-                    b.Property<long?>("CarId")
-                        .HasColumnType("bigint");
-
                     b.Property<DateTime>("DateCreated")
                         .HasColumnType("timestamp without time zone");
 
@@ -66,6 +84,9 @@ namespace SliceDelivery.DAL.Migrations
 
                     b.Property<string>("MiddleName")
                         .HasColumnType("text");
+
+                    b.Property<long?>("ProductId")
+                        .HasColumnType("bigint");
 
                     b.HasKey("Id");
 
@@ -81,8 +102,8 @@ namespace SliceDelivery.DAL.Migrations
                         .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
-                    b.Property<byte[]>("Avatar")
-                        .HasColumnType("bytea");
+                    b.Property<string>("Avatar")
+                        .HasColumnType("text");
 
                     b.Property<int>("Category")
                         .HasColumnType("integer");

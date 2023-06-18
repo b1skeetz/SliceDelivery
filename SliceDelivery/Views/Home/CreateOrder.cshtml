@@ -1,53 +1,81 @@
 ﻿@model SliceDelivery.Domain.ViewModels.Order.CreateOrderViewModel
 @{
-    Layout = "_Layout";
-    ViewBag.Title = "Оформление";
+    Layout = "_Layout"; 
+    ViewBag.Title = @language.GetKey("creatForm");
 }
+@using SliceDelivery.Controllers
+@inject LanguageService language
 
+<style>
+    .row{
+        width: 700px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #orderFormId {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form-group{
+        width: 100%;
+    }
+    input{
+        padding: 20px 30px !important;
+    }
+    .main{
+        margin-bottom: 130px;
+    }
+</style>
 <div style="padding: 20px;"></div>
 
-<div class="row">
-    <div class="col-sm-6">
+<div class="row main">
+    <div class="col-sm-12">
         <div class="card">
             <form id="orderFormId" asp-controller="Home" asp-action="CreateOrder">
-                <input asp-for="DateCreated" hidden />
-                <input asp-for="Login" hidden />
-                <input asp-for="ProductId" hidden />
-                <div asp-validation-summary="All" style="font-size:23px; font-family:Impact, serif" class="text-danger text-center"></div>
-                <h4 class="text-center">Форма создания заказа</h4>
-                <hr />
-                <div class="row">
-                    <div class="form-group col-md-4">
+                <input class="col-sm-12" asp-for="DateCreated" hidden />
+                <input class="col-sm-12" asp-for="Login" hidden />
+                <input class="col-sm-12" asp-for="ProductId" hidden />
+                <div class="col-sm-12" asp-validation-summary="All" style="font-size:23px; font-family:Impact, serif" class="text-danger text-center"></div>
+                <h4 class="col-sm-12" class="text-center">@language.GetKey("creatForm")</h4>
+                <hr class="col-sm-12" />
+                <div class ="col-sm-12" class="row">
+                    <div class="form-group col-sm-12">
                         <label class="col-form-label text-black-50"></label>
-                        <input asp-for="@Model.FirstName" type="text" class="form-control" asp-for="@Model.FirstName">
+                        <input asp-for="@Model.FirstName" type="text" placeholder="@language.GetKey("firstName")" class="form-control" asp-for="@Model.FirstName">
                     </div>
-                    <div class="form-group col-md-4">
+                    <div class="form-group col-sm-12">
                         <label class="col-form-label text-black-50"></label>
-                        <input asp-for="@Model.LastName" type="text" class="form-control" asp-for="@Model.LastName">
+                        <input asp-for="@Model.LastName" type="text" placeholder="@language.GetKey("secondName")" class="form-control" asp-for="@Model.LastName">
                     </div>
-                    <div class="form-group col-md-4">
+                    <div class="form-group col-sm-12">
                         <label class="col-form-label text-black-50"></label>
-                        <input asp-for="@Model.MiddleName" type="text" class="form-control" asp-for="@Model.MiddleName">
+                        <input asp-for="@Model.MiddleName" type="text" placeholder="@language.GetKey("lastName")" class="form-control" asp-for="@Model.MiddleName">
                     </div>
-                </div>
-                <div class="row">
-                    <div class="form-group col-md-4">
+             
+               
+
+                    <div class="form-group col-sm-12">
                         <label class="col-form-label text-black-50"></label>
-                        <input  asp-for="@Model.Address" type="text" class="form-control" asp-for="@Model.Address">
+                        <input asp-for="@Model.Address" placeholder="@language.GetKey("Address")" type="text" class="form-control col-sm-12" asp-for="@Model.Address">
                     </div>
-                    <div class="form-group col-md-4">
+                    
+                
+                   <div class="form-group col-sm-12">
                         <label class="col-form-label text-black-50"></label>
-                        <input asp-for="@Model.Quantity" type="text" class="form-control" asp-for="@Model.Quantity">
+                        <input asp-for="@Model.Quantity" placeholder="@language.GetKey("count")" type="text" class="form-control col-sm-12" asp-for="@Model.Quantity">
                     </div>
+                       
+                       
+              
                 </div>
                 <div class="d-grid gap-2 d-md-block float-right">
-                    <button class="btn btn-success" id="createOrderId">Отправить</button>
+                    <button class="btn btn-success" id="createOrderId">@language.GetKey("send")</button>
                 </div>
             </form>
-            <div class="card-body">
-                <a asp-controller="Home" asp-action="Index" class="card-link">Главная</a>
-                <a asp-controller="Home" asp-action="Menu" class="card-link">Меню</a>
-            </div>
+          
         </div>
     </div>
 </div>
@@ -64,18 +92,18 @@
                 data: model,
                 success: function(response) {
                     Swal.fire({
-                        title: 'Информация',
+                        title: '@language.GetKey("info")',
                         text: response.description,
                         icon: 'success',
-                        confirmButtonText: 'Окей'
+                        confirmButtonText: '@language.GetKey("ok")'
                     })
                 },
                 error: function(response) {
                     Swal.fire({
-                        title: 'Информация',
-                        text: 'Ошибка валидации | Заполните все поля',
+                        title: '@language.GetKey("info")',
+                        text: '@language.GetKey("error")',
                         icon: 'error',
-                        confirmButtonText: 'Окей'
+                        confirmButtonText: '@language.GetKey("ok")'
                     })
                 }
             })
